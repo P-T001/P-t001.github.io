@@ -2,12 +2,13 @@
 sort: 2
 ---
 
-# This is an incredibly long caption for a long menu
+# 介绍
 
 ```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-
-{% include list.liquid all=true %}
+模板主题：
+https://github.com/rundocs/jekyll-rtd-theme
+http://jekyllthemes.org/themes/jekyll-rtd-theme/
 ```
 
+---
 {% include list.liquid all=true %}

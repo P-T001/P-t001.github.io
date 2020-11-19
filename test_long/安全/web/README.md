@@ -1,3 +1,3 @@
-# file1
+# web
 
 source: `{{ page.path }}`
