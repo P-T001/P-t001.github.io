@@ -1,7 +1,5 @@
 # Web url
 
-source: `{{ page.path }}`
-
 ---
 
 message:

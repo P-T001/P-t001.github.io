@@ -1,7 +1,5 @@
 # Photo GPS
 
-source: `{{ page.path }}`
-
 ---
 
 ## 照片坐标定位

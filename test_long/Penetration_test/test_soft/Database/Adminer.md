@@ -1,7 +1,5 @@
 # Adminer
 
-source: `{{ page.path }}`
-
 ---
 数据库打包工具
 

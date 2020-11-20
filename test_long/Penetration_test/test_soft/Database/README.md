@@ -1,7 +1,5 @@
 # Database
 
-source: `{{ page.path }}`
-
 ---
 
 
