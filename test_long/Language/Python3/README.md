@@ -1,4 +1,4 @@
-#  Python3
+#  Python
 
 source: `{{ page.path }}`
 
