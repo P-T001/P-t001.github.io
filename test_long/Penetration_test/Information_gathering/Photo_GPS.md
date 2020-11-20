@@ -8,7 +8,7 @@ source: `{{ page.path }}`
 
 照片属性的GPS
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-1.png)
+![Photo_GPS-1.png](https://p-t001.github.io/image/blog/Photo_GPS-1.png)
 
 维度：22°30'7.98'      |     经度：113°54'56.22'
 
@@ -18,9 +18,9 @@ source: `{{ page.path }}`
 http://www.minigps.net/fc.html     # 
 ```
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-2.png)
+![Photo_GPS-2.png](https://p-t001.github.io/image/blog/Photo_GPS-2.png)
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-3.png)
+![Photo_GPS-3.png](https://p-t001.github.io/image/blog/Photo_GPS-3.png)
 
 113.91561666666666  ,  22.502216666666666
 
@@ -45,6 +45,5 @@ http://www.gpsspg.com/maps.htm
 ## IP定位
 
 http://www.chaipip.com/ip.php #每天查20个ip
-
 
 

@@ -10,6 +10,6 @@ ntunnel_mysql.php
 
 传上服务器，连接本地或者内网的服务器
 
-![image-20201120150841425](D:\data\io_data\book\P-T001.github.io\image\Penetration test\test_soft\Navicat-1.png)
+![Navicat-1.png](https://p-t001.github.io/image/blog/Navicat-1.png)
 
-![image-20201120150914360](D:\data\io_data\book\P-T001.github.io\image\Penetration test\test_soft\Navicat-2.png)
+![Navicat-2.png](https://p-t001.github.io/image/blog/Navicat-2.png)
