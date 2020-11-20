@@ -6,7 +6,7 @@
 
 照片属性的GPS
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS\Photo_GPS-1.png)
+![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-1.png)
 
 维度：22°30'7.98'      |     经度：113°54'56.22'
 
@@ -16,9 +16,9 @@
 http://www.minigps.net/fc.html     # 
 ```
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS\Photo_GPS-2.png)
+![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-2.png)
 
-![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS\Photo_GPS-3.png)
+![img](D:\data\io_data\book\P-T001.github.io\image\Penetration test\Information gathering\Photo_GPS-3.png)
 
 113.91561666666666  ,  22.502216666666666
 
