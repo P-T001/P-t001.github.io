@@ -1,4 +1,0 @@
-# RCE
-
-source: `{{ page.path }}`
-
