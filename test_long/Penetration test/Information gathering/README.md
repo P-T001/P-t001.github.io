@@ -1,5 +1,7 @@
 # Information gathering
 
+source: `{{ page.path }}`
+
 ---
 
 ## 1.域名| IP 查询

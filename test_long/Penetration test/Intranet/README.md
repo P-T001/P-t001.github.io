@@ -1,3 +1,6 @@
 # Intranet
 
 source: `{{ page.path }}`
+
+---
+

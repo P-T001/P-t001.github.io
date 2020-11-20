@@ -1,5 +1,7 @@
 # AntSword
 
+source: `{{ page.path }}`
+
 ---
 
 ## 中国蚁剑

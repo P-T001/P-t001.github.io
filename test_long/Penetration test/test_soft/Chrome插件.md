@@ -1,5 +1,7 @@
 # Chrome插件
 
+source: `{{ page.path }}`
+
 ---
 
 Hackbar                        # 构造url、post data  、header等

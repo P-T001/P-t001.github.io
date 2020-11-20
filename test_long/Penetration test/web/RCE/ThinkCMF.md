@@ -1,5 +1,7 @@
 # ThinkCMF——RCE
 
+source: `{{ page.path }}`
+
 ---
 
 ## 文件读取
