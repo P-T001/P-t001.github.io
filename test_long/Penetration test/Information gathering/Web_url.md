@@ -1,4 +1,4 @@
-# Web_url
+# Web url
 
 source: `{{ page.path }}`
 

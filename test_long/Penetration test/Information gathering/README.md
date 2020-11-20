@@ -1,4 +1,4 @@
-# Information gathering
+# Information
 
 source: `{{ page.path }}`
 

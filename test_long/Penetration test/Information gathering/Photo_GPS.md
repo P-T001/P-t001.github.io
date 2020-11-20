@@ -1,4 +1,4 @@
-# Photo_GPS
+# Photo GPS
 
 source: `{{ page.path }}`
 
