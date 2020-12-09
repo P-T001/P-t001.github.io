@@ -1,6 +1,4 @@
 # Language
 
-source: `{{ page.path }}`
-
 ---
 

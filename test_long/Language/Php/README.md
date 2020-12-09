@@ -1,6 +1,4 @@
 # Php
 
-source: `{{ page.path }}`
-
 ---
 

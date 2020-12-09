@@ -1,7 +1,5 @@
 #  Python
 
-source: `{{ page.path }}`
-
 ---
 
 
