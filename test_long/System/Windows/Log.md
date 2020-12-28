@@ -10,19 +10,34 @@ eventvwr.exe
 有应用程序、安全、setup、系统等
 ```
 
-
+---
 
 ## 备份
 
 ```
-C:\windows\system32\winevt\logs\*.evtx
+C:\windows\system32\winevt\logs\system.evtx      #系统日志
+C:\windows\system32\winevt\logs\setup.evtx       #setup日志
+C:\windows\system32\winevt\logs\security.evtx    #安全日志
+C:\windows\system32\winevt\logs\Application.evtx #应用程序日志
 ```
 
+---
+
+## 日志分析
+
+| 日志     | 事件ID                                         | 动作                                                   |
+| -------- | ---------------------------------------------- | ------------------------------------------------------ |
+| 安全日志 | 4624（存在登陆IP）                             | 远程登陆成功                                           |
+| 安全日志 | 4625                                           | 远程登陆失败                                           |
+| 安全日志 | 4634                                           | 登陆注销                                               |
+| 安全日志 | 4776（凭据验证）、4648、4624、4672（特殊登陆） | 使用超级用户（如管理员）进行登录，会同时产生四个时间ID |
+| 安全日志 | 1102                                           | 日志清除                                               |
 
 
 
 
 
+---
 
 ## 清除
 

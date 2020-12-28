@@ -13,6 +13,7 @@ http://jekyllthemes.org/themes/jekyll-rtd-theme/
 ## 图片引用
 ```
 https://p-t001.github.io/image/blog/xxxx.png
+<img src='https://p-t001.github.io/image/blog/xxxx.png' align='left' style='width:900px;height:500px'>
 ```
 
 ---

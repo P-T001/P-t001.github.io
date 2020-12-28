@@ -25,6 +25,8 @@
 /admins
 /admin_login
 /git
+/log
+
 
 
 ```

