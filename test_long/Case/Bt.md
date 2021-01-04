@@ -15,7 +15,7 @@ https://www.bt.cn/
 /etc/init.d/bt  default               #查看配置，面板端口、用户名、密码等
 ```
 
-修改宝塔：
+修改宝塔配置：
 
 ```
 cd /www/server/panel && python tools.py panel 123456  #修改宝塔面板登陆密码

