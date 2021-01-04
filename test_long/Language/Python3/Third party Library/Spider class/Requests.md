@@ -35,5 +35,6 @@ res_S.get(url) |res_S.post(url,data=)
 如：req=requests.get(url)
 req.status_code     # 返回状态码|int
 req.text            # 请求网页的文本
+req.encoding=req.apparent_encoding #将当前编码变成网页请求回来的编码，解决中文乱码问题
 ```
 

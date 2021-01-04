@@ -8,15 +8,15 @@
 
 开启windows update服务
 
-<img src='https://p-t001.github.io/image/blog/Mssql-install-1.png' align='left' style='width:900px;height:500px'>
+<img src='https://p-t001.github.io/image/blog/Mssql-install-1.png' align='left' style='width:900px;height:400px'>
 
 <img src='https://p-t001.github.io/image/blog/Mssql-install-2.png' align='left' style='width:900px;height:500px'>
 
-<img src='https://p-t001.github.io/image/blog/Mssql-install-3.png' align='left' style='width:900px;height:500px'>
+<img src='https://p-t001.github.io/image/blog/Mssql-install-3.png' align='left' style='width:700px;height:400px'>
 
-<img src='https://p-t001.github.io/image/blog/Mssql-install-4.png' align='left' style='width:900px;height:500px'>
+<img src='https://p-t001.github.io/image/blog/Mssql-install-4.png' align='left' style='width:800px;height:600px'>
 
-<img src='https://p-t001.github.io/image/blog/Mssql-install-5.png' align='left' style='width:900px;height:500px'>
+<img src='https://p-t001.github.io/image/blog/Mssql-install-5.png' align='left' style='width:900px;height:600px'>
 
 <img src='https://p-t001.github.io/image/blog/Mssql-install-6.png' align='left' style='width:900px;height:500px'>
 
