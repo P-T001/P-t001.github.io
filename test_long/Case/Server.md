@@ -47,8 +47,6 @@ tar xfzv tar.gz的压缩包路径                    #解压tar打包的gz格式
 x 解压
 ```
 
-
-
 后台运行：
 
 ```
@@ -70,13 +68,6 @@ grep -r -i -e 'db_user|db_host|db_password' 搜索路径       #搜索 数据库
 ```
 systemctl stop mysql  #停止mysql服务
 mysqld_safe --skip-grant-tables & mysql   #跳过权限认证运行mysql
-use mysql； #切换到mysql库
-update user set password=password("123456") where user='root'; #修改root密码
-flush privileges; #更新权限
-exit退出
-systemctl restart mysql #重启mysql服务
-mysql -uroot -p123456   #连接mysql
-show databases;         #查看所有数据库
 ```
 
 或者
@@ -86,6 +77,17 @@ vim /etc/my.cnf
 –-skip-grant-tables   
 
 systemctl restart mysql #重启mysql服务
+```
+
+修改数据库密码：
+
+```
+use mysql； #切换到mysql库
+update user set password=password("123456") where user='root'; #修改root密码
+flush privileges; #更新权限
+exit退出
+mysql -uroot -p123456   #连接mysql
+show databases;         #查看所有数据库
 ```
 
 
