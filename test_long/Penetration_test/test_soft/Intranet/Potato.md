@@ -2,7 +2,7 @@
 
 ---
 
- （针对本地用户，不能用于域用户）
+ （针对本地服务型用户，而且不能用于域用户、普通用户）
 
 ```
 教程：http://hackergu.com/powerup-stealtoken-rottenpotato/
