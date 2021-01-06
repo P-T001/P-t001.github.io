@@ -30,12 +30,12 @@ mysqldump -u用户名 -p密码 --databases 库名1 库名2 > /路径/xxx.sql
 mysqldump -u用户名 -p密码 --databases 库名1 库名2 |gzip > /路径/xxx.sql.tar.gz  #进行压缩备份
 ```
 
-还原：
+还原：（还原时需要对应数据库版本，最好能最精确到小版本，一般大版本也可）
 
 ```
 use 数据库;
 source /路径/xxx.sql;
 ```
 
-
+​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
