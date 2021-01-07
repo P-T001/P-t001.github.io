@@ -12,7 +12,12 @@ Wappalyzer                         # 识别网站的架构指纹
 
 ```
 
+google插件
 
+```
+插件网：www.cnplugins.com
+插件推荐http://ximcx.cn/post-157.html
+```
 
 
 

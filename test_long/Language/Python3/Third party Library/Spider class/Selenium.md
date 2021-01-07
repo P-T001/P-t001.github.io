@@ -45,20 +45,59 @@ driver = webdriver.Chrome(executable_path="C:/chromedriver.exe",options=options)
 driver.maximize_window()  #浏览器最大化
 driver.implicitly_wait(10)  #隐式等待
 
-driver.get('https://www.baidu.com')      # 请求网页
+driver.get('https://www.baidu.com')           # 请求网页
+driver.current_url                            # 获取当前url
+driver.save_screenshot("tupian.png")          # 截图
+driver.close()                                # 关闭当前页面，如果只有一个页面会关闭浏览器
 ```
 
 # 定位爬取元素
 ```
-find=driver.find_element_by_class_name   #class
-find=driver.find_element_by_id               #id
-find=driver.find_element_by_tag_name  #html标签名
-find=driver.find_element_by_name         #标签的name名
-find=driver.fiind_element_by_css_selector  #css名为xxxxx （#header   xxxxx）如有两个元素以上被定义  如 .mxx  .sss   |  css名 为   .mxx.sss   空格去掉
-find=driver.find_element_by_xpath  #使用xpath来定位，与xpath语法一样
-find=driver.find_elements_by_link_text  #使用文字链即标签包含的文本文件精确匹配
-find=driver.find_elements_by_partial_link_text  #使用文字链即标签包含的文本文件模糊匹配
-find.send_key()
-find.click()
+find=driver.find_element_by_class_name('')           #定位class
+find=driver.find_element_by_id('')                   #定位id
+find=driver.find_element_by_tag_name('')             #html标签
+find=driver.find_element_by_name('')                 #标签的name名
+find=driver.fiind_element_by_css_selector('')        #使用css语法定位
+find=driver.find_element_by_xpath('')                #使用xpath语法来定位
+find=driver.find_elements_by_link_text('')           #使用文字链即标签包含的文本文件精确匹配
+find=driver.find_elements_by_partial_link_text('')   #使用文字链即标签包含的文本文件模糊匹配
+
+find.send_key()                               # 输入
+find.click()                                  # 点击
+
 ```
 
+鼠标动作链
+
+```
+#导入 ActionChains 类
+from selenium.webdriver import ActionChains
+
+# 鼠标移动到 ac 位置
+ac = driver.find_element_by_xpath('element')
+ActionChains(driver).move_to_element(ac).perform()
+
+
+# 在 ac 位置单击
+ac = driver.find_element_by_xpath("elementA")
+ActionChains(driver).move_to_element(ac).click(ac).perform()
+
+# 在 ac 位置双击
+ac = driver.find_element_by_xpath("elementB")
+ActionChains(driver).move_to_element(ac).double_click(ac).perform()
+
+# 在 ac 位置右击
+ac = driver.find_element_by_xpath("elementC")
+ActionChains(driver).move_to_element(ac).context_click(ac).perform()
+
+# 在 ac 位置左键单击hold住
+ac = driver.find_element_by_xpath('elementF')
+ActionChains(driver).move_to_element(ac).click_and_hold(ac).perform()
+
+# 将 ac1 拖拽到 ac2 位置
+ac1 = driver.find_element_by_xpath('elementD')
+ac2 = driver.find_element_by_xpath('elementE')
+ActionChains(driver).drag_and_drop(ac1, ac2).perform()
+```
+
+​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
