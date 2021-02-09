@@ -4,6 +4,15 @@
 
 原因：网站为了隐藏真实IP，做了CDN处理
 
+判断IP是否做CDN，查IP的运营商看是否是做CDN服务
+
+```
+cloudflare.com
+akamai.com
+```
+
+
+
 
 
 1.多地ping（国内和国外都测试，如果一致代表真实IP）

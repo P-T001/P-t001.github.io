@@ -40,6 +40,8 @@ sqlmap -u "http://URL/id=1"
 
 --threads=线程数    #设置线程数，0~10
 
+--delay 1           #延时1秒
+
 --referer IP或域名  #设置访问来源
 
 --is-dba  #查看当前数据库用户权限
@@ -51,6 +53,8 @@ sqlmap -u "http://URL/id=1"
 --batch   按照sqlmap的默认提示往下确认
 
 --proxy http://localhost:8080 #代理
+
+--random-agent
 
 -p 参数名  #指定注入点参数，当有多个参数时使用 ,默认全部参数都测试注入
 
@@ -65,6 +69,8 @@ sqlmap -u "http://URL/id=1"
 -D 库名 -T 表名 --columns #列出库名的表名的所有字段名
 
 -D 库名 -T 表名 -C "字段名" --dump #列出库名的表名的字段名的数据
+
+-vv 显示详细操作如：使用的payload等
 
 4.0版本可以用
 

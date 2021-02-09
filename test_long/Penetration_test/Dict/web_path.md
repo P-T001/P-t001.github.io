@@ -8,10 +8,6 @@
 /rebots.txt
 ```
 
-
-
-
-
 常见目录路径：
 ```
 /config

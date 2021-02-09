@@ -5,7 +5,7 @@
 **国内镜像源**
 
 ```
-清华：httpss://pypi.tuna.tsinghua.edu.cn/simple
+清华：https://pypi.tuna.tsinghua.edu.cn/simple
 
 阿里云：https://mirrors.aliyun.com/pypi/simple/
 
@@ -16,5 +16,22 @@
 山东理工大学：https://pypi.sdutlinux.org/ 
 
 豆瓣：https://pypi.douban.com/simple/
+```
+
+**临时换源安装**
+
+```
+pip install xxx -i 镜像源地址
+```
+
+**永久换源**
+
+```
+路径：c:/用户/用户名/pip.ini
+---
+[global]
+timeout = 6000
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+trusted-host = pypi.tuna.tsinghua.edu.cn
 ```
 

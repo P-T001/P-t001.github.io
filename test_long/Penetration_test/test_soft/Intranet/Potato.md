@@ -2,7 +2,11 @@
 
 ---
 
- （针对本地服务型用户，而且不能用于域用户、普通用户）
+介绍：
+
+烂土豆 
+
+（针对本地服务型用户，而且不能用于域用户、普通用户）
 
 ```
 教程：http://hackergu.com/powerup-stealtoken-rottenpotato/

