@@ -2,6 +2,12 @@
 
 ---
 
+目录：
+
+{% include list.liquid all=true %}
+
+---
+
 Thinkphp3/Thinkphp5
 
 Thinkphp3开发手册：http://document.thinkphp.cn/manual_3_2.html#auto_build

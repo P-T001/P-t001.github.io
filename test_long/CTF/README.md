@@ -2,17 +2,17 @@
 
 ---
 
+目录：
 
+{% include list.liquid all=true %}
+
+---
 
 做题：
 
 ```
 www.ctfhub.com
 ```
-
-
-
-
 
 搜题
 

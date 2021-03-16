@@ -2,6 +2,12 @@
 
 ---
 
+目录：
+
+{% include list.liquid all=true %}
+
+---
+
 主流数据库：
 
 | name              | default port | text     |
