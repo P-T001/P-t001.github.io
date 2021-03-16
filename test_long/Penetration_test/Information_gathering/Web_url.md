@@ -30,3 +30,16 @@ whois查询：
 https://sg.godaddy.com/zh/whois/results.aspx?checkAvail=1&domain=
 ```
 
+批量检测网站标题和存活状态
+
+```
+http://www.link114.cn/    #可以与微步的IP反查配合，将IP的子域名复制到这里，只勾选网站标题和网站IP
+```
+
+md5解密：
+
+```
+somd5.com   # 可以解无盐值的md5
+cmd5.com    # 可以解MD5+盐   输入 md5:盐值
+```
+

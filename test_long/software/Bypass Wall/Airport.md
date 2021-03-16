@@ -8,7 +8,7 @@
 https://sites.google.com/site/ssrandv2rayandss/bestv2ray
 ```
 
-中低端机场：（起步:5￥）
+中端机场：（起步:15￥）
 
 ```
 https://passwall.pro/register?aff=28978

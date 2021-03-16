@@ -2,7 +2,7 @@
 
 ---
 
-## 安装
+**安装**
 
 运行环境：
 
@@ -29,7 +29,7 @@ java -noverify -javaagent:BurpSuiteCn.jar -Dfile.encoding=utf-8  -Xbootclasspath
 
 ---
 
-## 使用
+**使用**
 
 代理/选项/代理监听器
 
@@ -44,13 +44,39 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
 设置代理IP和端口，burp的流量都走该代理
 ```
 
+---
+ **插件**
+- captcha-killer ：验证码识别
 
+  ```
+  安装burp插件：https://blog.csdn.net/xiayu729100940/article/details/107557214
+  教程：https://www.cnblogs.com/TaoingBk/p/13755132.html
+  下载：https://github.com/c0ny1/captcha-killer/tree/0.1.2
+  需要配合图鉴、百度等打码平台的api（图鉴精度比较好）
+  ```
+  
+---
+**技巧**
 
+- intruder 
+
+  ```
+  添加变量
+  选择attack type 模式
+  	sniper 狙击模式 ：单个变量，字典取一行，发一次请求
+  	battering ram 散弹模式：多个变量，字典取一行，发一次
+  	pitchfork 音叉模式：多个变量，每个位置一个字典，每个字典去一行，进行一次请求，请求数量由最少一个字典决定
+  	cluster bomb 集束炸弹：多个变量（一般不超过3个），每个位置一个字典，进行组合请求
+  选择字典 -可以传txt文件，可以粘贴
+  option
+  ```
+
+  
 
 
 ---
 
-## 问题
+**问题**
 
 1.正常能访问，但使用burp拦包后，网站403不能访问资源
 

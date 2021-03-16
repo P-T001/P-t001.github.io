@@ -17,5 +17,14 @@ y
 看运气，能自动修复就可以
 ```
 
+2.window10关闭自动更新
+
+```
+服务：
+	运行services.msc  ，windows update 停用并禁用，恢复无操作
+组策略
+	运行gpedit.msc ，计算机配置/管理模板/windows组件/windows更新/配置自动更新 禁用
+```
+
 
 
