@@ -2,6 +2,12 @@
 
 ---
 
+目录：
+
+{% include list.liquid all=true %}
+
+类型：
+
 dom型
 
 存储型
