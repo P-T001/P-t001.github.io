@@ -28,6 +28,7 @@ whois查询：
 
 ```
 https://sg.godaddy.com/zh/whois/results.aspx?checkAvail=1&domain=
+https://x.threatbook.cn/nodev4/vb4/list   # 微步
 ```
 
 批量检测网站标题和存活状态
@@ -41,5 +42,18 @@ md5解密：
 ```
 somd5.com   # 可以解无盐值的md5
 cmd5.com    # 可以解MD5+盐   输入 md5:盐值
+```
+
+资产收集
+
+```
+fofa
+https://fofa.so/
+https://classic.fofa.so/
+https://github.com/uknowsec/Fofa-gui
+
+shodan
+雷神众测
+
 ```
 
