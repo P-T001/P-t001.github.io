@@ -15,9 +15,13 @@ head请求：requests.head(url,headers,proxies)      |url:目标地址、headers
 请求参数：
 
 ```
-请求头部：headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36', 'content-type': 'charset=utf8'} 
+请求头部：headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36', 'content-type': 'charset=utf8'}
+-
 代    理：proxies = {"http": "http://127.0.0.1:10809","https": "https://127.0.0.1:10809"}
+-
 postdata：data={'参数名':'值'}
+-
+证书路径：verify=False （忽略https证书）
 ```
 
 保持会话：

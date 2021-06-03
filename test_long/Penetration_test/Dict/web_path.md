@@ -22,6 +22,8 @@
 /admin_login
 /git
 /log
+/houtailogin
+/m/login/
 
 
 

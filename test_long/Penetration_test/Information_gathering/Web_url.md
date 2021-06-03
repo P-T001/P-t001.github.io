@@ -57,3 +57,16 @@ shodan
 
 ```
 
+指纹识别
+
+```
+https://scan.top15.cn/web/
+```
+
+百度 搜索
+
+```
+site:xxx.com inurl:admin
+site:xxx.com inurl:phpinfo.php
+```
+

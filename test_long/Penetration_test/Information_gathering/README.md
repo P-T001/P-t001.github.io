@@ -6,7 +6,7 @@
 
 ```
 fofa：https://fofa.so/
-
+	
 雷神众测：https://www.bountyteam.com/
 
 微步在线：https://x.threatbook.cn/
@@ -58,4 +58,11 @@ goby ： https://gobies.org/  #
 ```
 
 
+
+## 7.图标hash搜索
+
+```
+计算图标hash工具：https://github.com/Geek-0x4thk/iconhash_calculator
+通过fofa和shodan进行图标hash搜索
+```
 

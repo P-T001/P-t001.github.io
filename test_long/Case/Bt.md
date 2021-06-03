@@ -28,3 +28,11 @@ cd /www/server/panel && python tools.py root 123456   #修改宝塔数据库root
 https://news.west.cn/65331.html
 ```
 
+文件
+
+```
+default.db     # 登陆记录，从中发现宝塔界面账号密码
+admin_path.pl  # 宝塔界面路径
+default.pl     # 宝塔界面密码，如果登不上就看登陆记录文件
+```
+

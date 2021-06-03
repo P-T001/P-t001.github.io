@@ -24,3 +24,16 @@ set http_proxy=http://127.0.0.1:10809
 set https_proxy=http://127.0.0.1:10809
 ```
 
+查询本电脑历史插入u盘记录：
+
+```
+reg query HKLM\System\currentcontrolset\enum\usbstor /s >c:\usb.txt  
+使用“FriendlyName”作为关键词查找即可，此为u盘设备名称。
+```
+
+关闭windows防火墙
+
+```
+netsh firewall set opmode mode=disable
+```
+

