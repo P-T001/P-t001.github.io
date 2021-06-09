@@ -74,6 +74,8 @@ sqlmap -u "http://URL/id=1"
 
 -vv 显示详细操作如：使用的payload等
 
+--identify-waf  #探测waf
+
 4.0版本可以用
 
 --os-pwn #获取操作系统的shell  ，需要依赖msf（建议在kali里使用）

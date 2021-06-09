@@ -11,7 +11,8 @@
 各种CMS：
 
 ```
-https://wiki.bylibrary.cn/   #白阁文库、各种CMS漏洞
+https://wiki.bylibrary.cn/   #白阁文库、各种CMS漏洞，比较全
+http://wiki.peiqi.tech/
 ```
 
 Dedecms：

@@ -9,7 +9,7 @@ https://github.com/maurosoria/dirsearch
 常用：
 
 ```
-python dirsearch.py -u http://www.xxx.com/ -e * --proxy=http://127.0.0.1:10809 -x 500,403,400,401 --random-agents
+python dirsearch.py -u http://www.xxx.com/ -e * --proxy=http://127.0.0.1:10809 -x 500,403,400,401 --random-agents -b
 ```
 
 参数：
@@ -20,5 +20,6 @@ python dirsearch.py -u http://www.xxx.com/ -e * --proxy=http://127.0.0.1:10809 -
 --proxy=http://x.x.x.x:xxx    代理设置
 -x 不显示的状态码 
 --random-agents  随机请求user-agents
+-b, --request-by-hostname 设置通过主机名即域名请求，默认通过IP
 ```
 
