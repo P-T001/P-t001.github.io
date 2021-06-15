@@ -21,7 +21,7 @@ https://www.mrwu.red/xss/
 https://xss.pt/xss.php?do=login
 ```
 
-xss能弹会真实IP，可以通过关闭WebRTC 功能来防止IP泄露
+xss能弹回真实IP，可以通过关闭WebRTC 功能来防止IP泄露
 
 ```
 教程：https://blog.starryvoid.com/archives/274.html
