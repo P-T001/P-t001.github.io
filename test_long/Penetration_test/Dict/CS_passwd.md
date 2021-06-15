@@ -53,4 +53,4 @@ admin/admin
 shell/shell
 ```
 
-<img src='https://p-t001.github.io/image/blog/CS_passwd.png' align='left' style='width:900px;height:500px'>
+<img src='https://p-t001.github.io/image/blog/CS_passwd.png' align='left' style='width:500px;height:900px'>
