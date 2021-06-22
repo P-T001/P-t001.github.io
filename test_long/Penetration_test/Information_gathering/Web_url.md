@@ -61,6 +61,8 @@ shodan
 
 ```
 https://scan.top15.cn/web/
+http://whatweb.bugscaner.com/look/
+https://pentest.x10sec.org/whatcms
 ```
 
 百度 搜索

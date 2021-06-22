@@ -26,3 +26,9 @@ https://www.kuailimao.cc/register?aff=28587
 https://bywave.io
 ```
 
+自建梯子
+
+```
+racknerd:  https://www.racknerd.com/kvm-vps   # 便宜，开启加速之后速度可观，但是没有机场速度快，节点多，可做其他用途
+```
+

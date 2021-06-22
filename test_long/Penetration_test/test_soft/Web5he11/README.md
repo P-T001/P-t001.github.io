@@ -12,6 +12,7 @@
 
 ```
 https://github.com/johnjce/herramientas/tree/master/
+https://github.com/weepsafe/phpshell
 ```
 
 导致webshell不能执行命令的原因：（执行命令回显：red=127）

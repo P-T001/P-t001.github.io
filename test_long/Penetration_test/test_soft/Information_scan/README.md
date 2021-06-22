@@ -18,8 +18,11 @@ https://github.com/7kbstorm/7kbscan-WebPathBrute
 **子域名挖掘**
 - SubDomainsBrute
 - Sublist3r
+- https://phpinfo.me/domain/
 
 **漏洞扫描**
+
 - Xray
 - nessus
 - awvs
+

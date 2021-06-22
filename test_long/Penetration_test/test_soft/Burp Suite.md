@@ -87,3 +87,13 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
 
 解决：使用HttpCanary监控网络包，然后修改内容进行重放（本质不会拦截网络包）
 
+---
+
+**插件**
+
+```
+ShiroScan：https://github.com/Daybr4ak/ShiroScan
+fofa:https://github.com/0nise/burp-fofa
+插件：https://github.com/Mr-xn/BurpSuite-collections
+```
+
