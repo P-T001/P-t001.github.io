@@ -1,4 +1,4 @@
-# cobaltstrike
+# Cobaltstrike
 
 ---
 
