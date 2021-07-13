@@ -1,10 +1,10 @@
 site_name: Wiki
-site_description: VulWiki，漏洞库
-site_author: Morker
-site_url: https://wiki.96.mk/
+site_description: VulWiki，笔记
+site_author: Pt001
+site_url: 
 
-repo_name: 'nosafer/nosafer.github.io'
-repo_url: 'https://github.com/nosafer/nosafer.github.io'
+repo_name: 'P-T001/P-T001.github.io'
+repo_url: 'https://github.com/P-T001/P-T001.github.io'
 
 theme:
   name: material
