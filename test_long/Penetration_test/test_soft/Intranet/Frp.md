@@ -32,11 +32,12 @@ cpu架构：（https://blog.csdn.net/lixuande19871015/article/details/98613711�
 386	X86架构
 amd64	amd架构
 arm	arm架构
-arm64	64位arm架构
+arm64	64位arm架构  aarch64
 mips	mips架构
 mips64	64位mips架构
 mipsle	mipsle架构
 mips64le	64位mipsle架构
+
 使用名称查看linux 架构：
 arch
 
