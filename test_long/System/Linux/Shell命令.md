@@ -11,6 +11,9 @@ df -h                #看挂载目录大小
 du -sh *             #看当前的所有文件大小
 find
 grep
-
+curl -x socks5h://127.0.0.1:4444 https://www.sougou.com/   # 使用代理去访问搜狗
+arch  # 看cpu 架构
+cat /proc/cpuinfo # 看cpu 详细信息
+cat /proc/cpuinfo |grep name | cut -f2 -d: |uniq -c #只能cpu
 ```
 

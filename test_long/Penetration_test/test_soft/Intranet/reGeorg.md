@@ -4,7 +4,7 @@
 
 - 介绍
 
-利用http/https隧道进行内网穿透
+利用http/https隧道进行内网穿透，动静太大，会拖垮web端访问
 
 - 链接：https://github.com/sensepost/reGeorg
 
