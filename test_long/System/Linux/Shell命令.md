@@ -17,3 +17,15 @@ cat /proc/cpuinfo # 看cpu 详细信息
 cat /proc/cpuinfo |grep name | cut -f2 -d: |uniq -c #只能cpu
 ```
 
+代理设置：
+
+```
+ProxyChains：
+/etc/proxychains.conf 
+---
+socks5  x.x.x.x 端口
+---
+proxychains  运行命令  命令参数   # 走代理使用命令
+
+```
+

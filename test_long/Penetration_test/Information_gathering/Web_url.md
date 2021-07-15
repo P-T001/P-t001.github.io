@@ -72,3 +72,16 @@ site:xxx.com inurl:admin
 site:xxx.com inurl:phpinfo.php
 ```
 
+证书查询
+
+```
+https://crt.sh/
+```
+
+子域名查询
+
+```
+http://sbd.ximcx.cn/
+站长工具:http://tool.chinaz.com/subdomain/
+```
+
