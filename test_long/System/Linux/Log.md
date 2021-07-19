@@ -64,7 +64,10 @@ unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/n
 centos: 8.8.8.8-> 1.1.1.1
 
 ```
+修改
 utmpdump /var/log/wtmp |sed "s/8.8.8.8/1.1.1.1/g" |utmpdump -r >/tmp/wtmp1 &&\mv  /tmp/wtmp1 /var/log/wtmp
+删除：
+utmpdump /var/log/wtmp |sed "s/登录ip/d" |utmpdump -r >/tmp/wtmp1 &&\mv  /tmp/wtmp1 /var/log/wtmp
 ```
 
 unix:192.168.8.88->/localhost

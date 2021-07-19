@@ -20,3 +20,16 @@ proxifier：（需要配置规则，有时候会不生效）
 
 ```
 
+内网穿透
+
+```
+nps （http、socket5）
+https://github.com/ehang-io/nps/releases/
+
+frp（http、socket5）
+https://github.com/fatedier/frp/releases
+
+spp(支持icmp协议、http、socket5)
+https://gitee.com/mirrors/spp
+```
+
