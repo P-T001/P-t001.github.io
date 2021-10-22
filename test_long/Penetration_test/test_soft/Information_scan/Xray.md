@@ -6,7 +6,7 @@
 
 ---
 
-## 下载
+**下载**
 
 ```#
 https://github.com/chaitin/xray/releases
@@ -14,11 +14,7 @@ https://github.com/chaitin/xray/releases
 
 ---
 
-## 使用
-
-需要配合全局代理使用，本身不支持代理
-
-使用时修改exe的名字为xray，比较方便
+**使用**
 
 浏览器代理端口设置7777进行被动扫描(浏览器设置代理下述本地端口，进行被动扫描)
 
@@ -36,5 +32,14 @@ xray.exewebscan --url http://example.com/?a=b --html-output single-url.html
 
 ```
 xray.exewebscan --basic-crawler http://example.com --html-output vuln.html
+```
+
+**配置**
+
+```
+具体见手册：https://docs.xray.cool/#/configration/README
+config.yaml为配置文件
+#---
+proxy: "http://127.0.0.1:10809"
 ```
 

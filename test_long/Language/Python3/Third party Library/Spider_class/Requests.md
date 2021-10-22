@@ -25,11 +25,18 @@ postdata：data={'参数名':'值'}
 -
 cookies={}
 如果cookie是"x1=xxxx; x2=yyyyy"这种类型,通过以下可以变成字典
-cookie='x1=xxxx;x2=yyyyy'
-cookie_dict_1 = {}
-cookies_list = cookie.split('; ')
-    for cookie in cookies_list:
-        cookie_dict_1[cookie.split('=')[0]] = cookie.split('=')[1]
+def get_cookie_dict(cookie):
+    cookie_dict_1 = {}
+    if cookie.rfind(';')==len(cookie)-1:
+        cookie=cookie[0:-1]
+    if ';' in cookie:
+        cookies_list = cookie.split(';')
+        for cookie in cookies_list:
+            cookie_dict_1[cookie.split('=')[0].strip()] = cookie.split('=')[1].strip()
+        return cookie_dict_1
+    else:
+        cookie_dict_1[cookie.split('=')[0].strip()] = cookie.split('=')[1].strip()
+        return cookie_dict_1
 
 ```
 

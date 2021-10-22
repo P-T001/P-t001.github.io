@@ -2,11 +2,7 @@
 
 ---
 
-目录：
 
-{% include list.liquid all=true %}
-
----
 
 宝塔windows提权:https://github.com/Hzllaga/BT_Panel_Privilege_Escalation
 

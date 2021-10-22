@@ -153,10 +153,17 @@ else:         # 以上都不满足
 ```
 try:
 	pass  # 功能代码
+	raise RuntimeError(title)  # 主动抛出异常
+except RuntimeError as R:
+	print(R)   # 
 except 错误类型: # Aexception as result：
 	pass  # 根据错误类型，执行操作
 except Exception as E: # 其他错误
 	print(E)  #输出错误信息
+else:   # 运行无异常才会执行
+	pass
+finally： # 无论是否异常都会执行
+	pass
 ---
 错误类型：
 IndentationError：expected an indented block 

@@ -44,3 +44,22 @@ systemctl restart network  # 重启网络服务
 
 dns配置文件 /etc/resolv.conf
 
+3.kali不兼容秘钥算法
+
+问题：
+
+```
+Key exchange failed.
+No compatible key exchange method.
+```
+
+解决：
+
+```
+vi /etc/ssh/sshd_config
+---末尾增加一行
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+----
+重启ssh服务即可
+```
+

@@ -19,7 +19,7 @@
 ```
 dsquery server                          #等等域控的主机名，如WIN-KMZ8MFWF5L8
 
-net group "domain controllers" /domain  #得到WIN-KMZ8MFWF5L8$(去掉$)
+net group "domain controllers" /domain  #查询域管账号
 
 net view                                #查看视图，备注servidor master ad 域控、dns域控可能性很大
 
@@ -28,24 +28,23 @@ ping 主机名                             #ping域控的主机名， 得到域�
 net group "domain admins" /domain      #找域管理员
 
 net user /domain    |net user 域用户 /domain    #找域所有成员
+
 ```
 
 其他信息查看：
 
 ```
-（net config workstation  #查询当前登录域  如pico.local
-
-​    net accounts /domain   #查询域密码策略
-
-​    net view /domain     #查看所有域
-
-​    net view /domain:域名称 查看域内用户
-
-​    net group "domain computers" /domain   #查看当前域的计算机列表
-
-​    wmic qfe          #查询补丁信息
-
-​    wmic os           #查看操作系统类型）
+ net config workstation  #查询当前登录域  如pico.local
+ net accounts /domain   #查询域密码策略
+ net view /domain     #查看所有域
+ net view /domain:域名称 查看域内用户
+ net group "domain computers" /domain   #查看当前域的计算机列表
+ wmic qfe          #查询补丁信息
+ wmic os           #查看操作系统类型）
+ net use            # 查看是否ipc连接
+ net share          # 查看是否有共享
+ net session         # 查看是否有连接本地的ipc主机
+ setspn -q */* | findstr "MSSQL"  #setspn 通过spn扫描查看所有连接的主机和服务，筛选mssql
 ```
 
 guest用户隐藏

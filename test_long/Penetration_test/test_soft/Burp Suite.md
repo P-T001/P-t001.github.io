@@ -57,7 +57,21 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
   下载：https://github.com/c0ny1/captcha-killer/tree/0.1.2
   需要配合图鉴、百度等打码平台的api（图鉴精度比较好）
   ```
+- Python Scripter：将发包内容转成python代码
+  ```
+  /Extender/BApp Store/Python Scripter/install
+  包内容右键，点击Copy as requests with session object，粘贴到文本中
   
+  ```
+- HaE :历史包内容规则识别,可以识别包内邮箱、手机、漏洞等
+  ```
+  https://github.com/gh0stkey/HaE
+  https://github.com/gh0stkey/HaE/releases/tag/2.1
+  /Extender/Extensions/Add/Select File/Next/选择HaE.jar
+  /HaE/config 将config.yml文件内容换成 ->https://gh0st.cn/HaE/ 的内容
+  
+  ```
+
 ---
 **技巧**
 
@@ -86,6 +100,8 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
 原因：网站使用http 2.0协议，不能拦截包
 
 解决：使用HttpCanary监控网络包，然后修改内容进行重放（本质不会拦截网络包）
+
+新版burp2021.5开始支持http2.0
 
 ---
 

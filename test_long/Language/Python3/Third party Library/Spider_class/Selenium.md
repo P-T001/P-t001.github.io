@@ -17,7 +17,7 @@ chrome、firefox、PhantomJS、IE、safari、opera
 webdriver下载：（需要与你安装的浏览器版本对应）
 
 ```
-chrome：https://chromedriver.storage.googleapis.com/index.html?path=2.29/
+chrome：https://chromedriver.storage.googleapis.com/index.html
 firefox：https://github.com/mozilla/geckodriver/releases
 ...
 ```
@@ -35,20 +35,40 @@ C:\Program Files (x86)\Google\Chrome\Application下，并将该路径加入环�
 
 ```
 from selenium import webdriver           # 导入模块
-options=webdriver.ChromeOptions()
-options.add_argument('cookie路径') # 填入浏览器保存cookie的路径，即使用爬虫访问的cookie路径都保存在这里
-options.add_experimental_option('excludeSwitches',['ignore-certificate-errors'])   # 访问https时忽略报错
-driver = webdriver.Chrome(executable_path="C:/chromedriver.exe",options=options)   # 创建chrome对象
+from selenium.webdriver.chrome.options import Options
+import time
 
-
-
-driver.maximize_window()  #浏览器最大化
-driver.implicitly_wait(10)  #隐式等待
-
-driver.get('https://www.baidu.com')           # 请求网页
-driver.current_url                            # 获取当前url
-driver.save_screenshot("tupian.png")          # 截图
-driver.close()                                # 关闭当前页面，如果只有一个页面会关闭浏览器
+chrome_options = Options()
+chrome_options.add_argument('--headless')  # 隐藏后台运行
+driver = webdriver.Chrome(executable_path=selenium_path,chrome_options=chrome_options)
+driver.get(m_li[1])
+# 调用js进行循环下滑每次step=50，下滑到底为止
+strs=""" 
+        (function () { 
+            var y = document.body.scrollTop; 
+            var step = 50;   
+            window.scroll(0, y); 
+            function f() { 
+                if (y < document.body.scrollHeight) { 
+                    y += step; 
+                    window.scroll(0, y); 
+                    setTimeout(f, 50); 
+                }
+                else { 
+                    window.scroll(0, y); 
+                    document.title += "scroll-done"; 
+                } 
+            } 
+            setTimeout(f, 1000); 
+        })(); 
+        """
+driver.execute_script(strs)
+time.sleep(5)
+# 保存成mhtml
+res = driver.execute_cdp_cmd('Page.captureSnapshot', {})
+with open(m_li[0], 'w') as f:
+    f.write(res['data'].replace('\r',''))
+driver.quit()
 ```
 
 # 定位爬取元素
@@ -64,7 +84,9 @@ find=driver.find_elements_by_partial_link_text('')   #使用文字链即标签�
 
 find.send_key()                               # 输入
 find.click()                                  # 点击
-
+urls = driver.find_elements_by_xpath("//a")   # 抓取所有超链接
+for url in urls:
+    print(url.get_attribute("href"))
 ```
 
 鼠标动作链
@@ -98,6 +120,20 @@ ActionChains(driver).move_to_element(ac).click_and_hold(ac).perform()
 ac1 = driver.find_element_by_xpath('elementD')
 ac2 = driver.find_element_by_xpath('elementE')
 ActionChains(driver).drag_and_drop(ac1, ac2).perform()
+
+
+# 鼠标滑动 
+window.scrollBy(0,500)  # 向下滑动500个像素
+window.scrollBy(0,-500)　# 向上滚动500个像素
+window.scrollBy(500,0)  # 向右滑动500个像素
+window.scrollBy(-500,0)　# 向左滚动500个像素
+driver.execute_script("window.scrollTo(x,y)")  # 滑动到具体位置。调用js来滑动
+driver.execute_script("arguments[0].scrollIntoView();", element)  # 向下滚动至-元素可见
+driver.execute_script("arguments[0].scrollIntoView(false);", element)  # 向上滚动至-元素可见
+js="window.scrollTo(0,-document.body.scrollHeight)" 
+driver.execute_script(js)  # 滑动至页面底部
+js="window.scrollTo(0,document.body.scrollHeight)" 
+driver.execute_script(js)  # 滑动至顶部
 ```
 
 ​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

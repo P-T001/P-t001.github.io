@@ -31,9 +31,13 @@ https://news.west.cn/65331.html
 文件
 
 ```
-default.db     # 登陆记录，从中发现宝塔界面账号密码
-admin_path.pl  # 宝塔界面路径
-default.pl     # 宝塔界面密码，如果登不上就看登陆记录文件
+/www/server/panel/data/default.db     # 登陆记录，从中发现宝塔界面账号密码
+/www/server/panel/data/admin_path.pl  # 宝塔界面路径
+/www/server/panel/data/default.pl     # 宝塔界面密码，如果登不上就看登陆记录文件
+/www/server/panel/data/port.pl  # 面板端口
+/www/server/panel/data/domain.conf  # 域名绑定面板
+/www/server/panel/data/*.login    # 登陆限制
+/www/server/panel/data/limitip.conf  # 面板授权IP
 ```
 
 宝塔面板

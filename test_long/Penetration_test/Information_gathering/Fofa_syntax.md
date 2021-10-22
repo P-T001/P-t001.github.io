@@ -15,5 +15,8 @@ icon_hash=""         # 通过站点特有图标的hash进行搜索 ，需要高�
 ```
 https://github.com/FishM4n/Fofa-collect
 如出现请求错误，需关闭重新运行
+
+fofa高级查询工具：https://www.mrwu.red/fenxiang/3876.html
+
 ```
 

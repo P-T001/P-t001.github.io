@@ -7,7 +7,7 @@
 ```
 import argparse
 if __name__=="__main__":
-	parset=argparse.ArgumentParser(description="介绍")
+	parser=argparse.ArgumentParser(description="介绍")
 	parser.add_argument('-u', '--url', help='帮助信息')
     parser.add_argument('-v', '--version', type=int,
                         choices=[3, 5], default=3, help="thinkphp version, default 3")

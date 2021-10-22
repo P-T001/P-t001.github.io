@@ -16,7 +16,7 @@
     $_POST     # post请求
     $_GET      # get请求
     $_REQUEST  # post请求+get请求
-    $_COOKIES
+    $_COOKIES  # 获取cookie值
     $_SERVER['REMOTE_ADDR']   # 获取客户端的REMOTE_ADDR
     getenv()    # 获取请求header的参数值如：HTTP_FORWARDED、
     
@@ -43,6 +43,8 @@ Upload、write、fileName 、filePath
 sql注入：
 Select、Dao 、from 、delete 、update、insert
 
+密码：
+PASSWORD、密码
  ```
 
   过滤函数

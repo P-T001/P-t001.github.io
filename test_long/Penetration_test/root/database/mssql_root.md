@@ -1,4 +1,4 @@
-# mysql_root
+# mssql_root
 
 ---
 
