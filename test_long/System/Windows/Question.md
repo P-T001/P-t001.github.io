@@ -26,5 +26,11 @@ y
 	运行gpedit.msc ，计算机配置/管理模板/windows组件/windows更新/配置自动更新 禁用
 ```
 
+3.win10关闭休眠
+
+```
+powercfg /h off
+```
+
 
 

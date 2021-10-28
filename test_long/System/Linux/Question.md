@@ -63,3 +63,10 @@ KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384
 重启ssh服务即可
 ```
 
+4.ubuntu 16 使用vi输入问题任意数据会变成ABCD
+
+```
+sudo apt-get remove vim-common  # vim-tiny
+sudo apt-get install vim        # vim full
+```
+

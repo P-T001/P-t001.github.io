@@ -49,6 +49,7 @@ https://sitereport.netcraft.com/
 
 ```
 http://www.link114.cn/    #可以与微步的IP反查配合，将IP的子域名复制到这里，只勾选网站标题和网站IP
+http://seo.iis7.com/
 ```
 
 md5解密：
@@ -97,5 +98,16 @@ https://crt.sh/
 ```
 http://sbd.ximcx.cn/
 站长工具:http://tool.chinaz.com/subdomain/
+```
+
+情报收集
+
+```
+https://github.com/s0md3v/Photon
+python Photon.py -u "" 
+-t 线程数
+-l 深度
+-d 每个请求间的延迟
+
 ```
 

@@ -23,6 +23,7 @@ shiro反序列化利用工具：
 ```
 https://github.com/j1anFen/shiro_attack
 https://github.com/fupinglee/ShiroScan/releases/tag/v1.1
+https://github.com/feihong-cs/ShiroExploit-Deprecated/releases/tag/v2.51
 ```
 
 网址采集器

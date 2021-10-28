@@ -35,3 +35,9 @@ Google Chrome：在谷歌应用商店安装谷歌官方扩展 “WebRTC Leak Pre
 Google Chrome 另一种方法：在谷歌应用商店安装谷歌官方扩展 “WebRTC Network Limiter”，在插件选项里找到 “Options” 选择第四项 “Use my proxy server” 即可
 ```
 
+利用编辑器插入超链接功能导致存储型xss
+
+```
+javascript:alert(document.cookie)
+```
+

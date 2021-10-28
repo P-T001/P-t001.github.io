@@ -2,7 +2,15 @@
 
 ---
 
-**K8Tool（解压：k8team）**
+**所有工具的解压密码**
+
+```
+k8gege
+k8team
+K8team
+```
+
+**K8Tool**
 
 ```
 https://github.com/k8gege/K8tools
