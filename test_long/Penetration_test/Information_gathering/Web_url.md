@@ -13,7 +13,6 @@ http://www.z-sms.com/
 ```
 https://www.cnv3.com/l-36-1.html(注册账号进行回复获取)  #棋牌、商城、游戏居多
 https://rjfxz.com/page_3.html（每天签到领1个币，筹够币可以买源码）
-https://52shanhe.com/（免费下载）
 https://www.9nw.cc/
 https://www.suibianlu.com/
 https://www.qiumw.com/
@@ -34,8 +33,6 @@ https://www.linshiyouxiang.net/
 ```
 https://www.w3h5.com/post/619.html
 ```
-
-
 
 whois查询：
 
@@ -63,12 +60,19 @@ cmd5.com    # 可以解MD5+盐   输入 md5:盐值
 
 ```
 fofa
-https://fofa.so/
-https://classic.fofa.so/
-https://github.com/uknowsec/Fofa-gui
-
-shodan
+    https://fofa.so/
+    https://classic.fofa.so/
+    https://github.com/uknowsec/Fofa-gui
+夸克
+	https://quake.360.cn/
+hunter
+	https://hunter.qianxin.com/
+钟馗之眼
+	https://www.zoomeye.org/
 雷神众测
+	https://www.bountyteam.com/
+shodan
+	https://www.shodan.io/
 
 ```
 
@@ -108,6 +112,5 @@ python Photon.py -u ""
 -t 线程数
 -l 深度
 -d 每个请求间的延迟
-
 ```
 

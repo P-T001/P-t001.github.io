@@ -26,6 +26,7 @@
 /m/login/
 /new/admin
 /news/admin
+/wapshop
 
 ```
 

@@ -67,11 +67,18 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
   ```
   https://github.com/gh0stkey/HaE
   https://github.com/gh0stkey/HaE/releases/tag/2.1
+  ---
   /Extender/Extensions/Add/Select File/Next/选择HaE.jar
   /HaE/config 将config.yml文件内容换成 ->https://gh0st.cn/HaE/ 的内容
-  
   ```
-
+- chunked coding converter
+  ```
+  https://github.com/c0ny1/chunked-coding-converter
+  ---
+  对包右键/chunked coding converter/config # 进行配置
+  	作用于哪个套件，这个套件表示的是burp导航栏里面的proxy/intruder/repeater等常用
+  对包右键/chunked coding converter/Encoding request body # 编码，即分块编码
+  ```
 ---
 **技巧**
 

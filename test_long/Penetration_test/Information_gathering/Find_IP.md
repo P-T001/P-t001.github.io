@@ -41,6 +41,8 @@
 
   ```
   https://www.netcraft.com 
+  https://sitereport.netcraft.com/?url=xxx.com # 查历史dns解析，会有真实IP换成cdnip的过程
+  https://www.benmi.com/whoishistory/    # 查历史dns解析和备案
   http://www.who.is
   http://www.crimeflare.org/
   https://dnsdb.io/zh-cn/ ###DNS查询
@@ -48,6 +50,7 @@
   http://viewdns.info/ ###DNS、IP等查询
   https://tools.ipip.net/cdn.php ###CDN查询IP
   http://fofa.so     # 搜特征
+  
   ```
 
 - 本地解析

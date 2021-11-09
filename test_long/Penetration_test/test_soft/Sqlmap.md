@@ -78,6 +78,10 @@ sqlmap -u "http://URL/id=1"
 
 --os-shell
 
+--prefix=PREFIX  # 加payload前面闭合符号
+
+--suffix=SUFFIX  # 加payload后面闭合符号
+
 4.0版本可以用
 
 --os-pwn #获取操作系统的shell  ，需要依赖msf（建议在kali里使用）

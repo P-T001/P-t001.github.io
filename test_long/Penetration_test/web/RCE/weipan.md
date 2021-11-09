@@ -55,7 +55,7 @@ denglu=think:{"otype":"3","userid":"","username":"","token":"3c341b110c44ad9e7da
 - 教程：https://www.freebuf.com/articles/web/254396.html
 
 ```
-/参数设置/基本设置/LOGO/选择文件/
+/参数设置/基本设置/LOGO/选择文件/传php文件
 通过源代码查看logo处可以看到路径，一般在public/uploads/20210101/md5.php（上传日期/文件md5）
 ```
 
@@ -74,6 +74,7 @@ phpinfo();//
 /runtime/cache/3a/8e4c06e471595f6eb262bb9b5582d9.php
 
 PS：如果没有参数设置，可能只是删除了导航，没有删除实际功能
-可以直接访问/setup/addsetup.html  添加配置
+可以直接访问/后台路径/setup/addsetup.html  添加配置
+/admin/setup/deploy.html   # 删除参数
 ```
 

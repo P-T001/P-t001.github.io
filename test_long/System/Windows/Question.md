@@ -4,9 +4,11 @@
 
 1.蓝屏解决
 
+```
 下载bluesreenview查看系统蓝屏原因（dump文件）
+```
 
-1.ntoskrnl.exe出现错误
+2.ntoskrnl.exe出现错误
 
 ```
 1.使用 DirectX修复工具增强版 修复系统文件
@@ -17,7 +19,7 @@ y
 看运气，能自动修复就可以
 ```
 
-2.window10关闭自动更新
+3.window10关闭自动更新
 
 ```
 服务：
@@ -26,10 +28,16 @@ y
 	运行gpedit.msc ，计算机配置/管理模板/windows组件/windows更新/配置自动更新 禁用
 ```
 
-3.win10关闭休眠
+4.win10关闭休眠
 
 ```
 powercfg /h off
+```
+
+5.win10缺少dll
+
+```
+https://docs.microsoft.com/zh-CN/cpp/windows/latest-supported-vc-redist?view=msvc-160
 ```
 
 
