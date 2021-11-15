@@ -55,7 +55,7 @@ wmic product get name,version   # 查看安装的软件：(获取得比较慢)
 ```
 netstat -ab # 查看端口和进程名
 tasklist # 查看进程pid   
-wmic process # 查看进程路径
+wmic process # 查看进程路径 
 |findstr "xx"  # 对前面命令输出进行管道筛选
 ```
 
