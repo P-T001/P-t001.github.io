@@ -16,6 +16,7 @@
 /login
 /adminmanage
 /adminmanager
+/Admincenter
 /manager
 /manage
 /admins
@@ -27,6 +28,5 @@
 /new/admin
 /news/admin
 /wapshop
-
 ```
 

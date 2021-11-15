@@ -43,15 +43,25 @@ netsh firewall set opmode mode=disable
 for /f  "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles')  do  @echo %j | findstr -i -v echo |  netsh wlan show profiles %j key=clear
 ```
 
-查看系统版本：
+软件系统信息：
 
 ```
-wmic OS get Caption,CSDVersion,OSArchitecture,Version
+wmic OS get Caption,CSDVersion,OSArchitecture,Version  # 查看系统版本：
+wmic product get name,version   # 查看安装的软件：(获取得比较慢)
 ```
 
-查看安装的软件：(获取得比较慢)
+找端口进程对应文件路径
 
 ```
-wmic product get name,version    
+netstat -ab # 查看端口和进程名
+tasklist # 查看进程pid   
+wmic process # 查看进程路径
+|findstr "xx"  # 对前面命令输出进行管道筛选
+```
+
+修改cmd乱码显示
+
+```
+chcp 65001         # 修改成utf-8
 ```
 

