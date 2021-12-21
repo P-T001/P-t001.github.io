@@ -57,12 +57,14 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
   下载：https://github.com/c0ny1/captcha-killer/tree/0.1.2
   需要配合图鉴、百度等打码平台的api（图鉴精度比较好）
   ```
+  
 - Python Scripter：将发包内容转成python代码
   ```
   /Extender/BApp Store/Python Scripter/install
   包内容右键，点击Copy as requests with session object，粘贴到文本中
   
   ```
+  
 - HaE :历史包内容规则识别,可以识别包内邮箱、手机、漏洞等
   ```
   https://github.com/gh0stkey/HaE
@@ -71,6 +73,7 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
   /Extender/Extensions/Add/Select File/Next/选择HaE.jar
   /HaE/config 将config.yml文件内容换成 ->https://gh0st.cn/HaE/ 的内容
   ```
+  
 - chunked coding converter
   ```
   https://github.com/c0ny1/chunked-coding-converter
@@ -79,6 +82,21 @@ IP:8080           # 如果要抓其他设备的包需要设置本地IP，然后�
   	作用于哪个套件，这个套件表示的是burp导航栏里面的proxy/intruder/repeater等常用
   对包右键/chunked coding converter/Encoding request body # 编码，即分块编码
   ```
+  
+- BurpCrypto
+  
+  ```
+  https://github.com/whwlsfb/BurpCrypto
+  ---
+  安装后选择BurpCrypto/加密方式/设置键值（key），添加处理器命名
+  切换到 Intruder->Payloads->Payload Processing
+  Add/Invoke Burp extension（调用 Burp 扩展）/选择刚才命名的处理器/Start attack（开始攻击）
+  加密方式：AES、RSA、DES、输入js代码（目标站点的加密函数）
+  输出加密js代码方式：
+  将js代码输入，然后js Method name 中输入目标调用的加密函数名，代表爆破时密码均需要调用该函数
+  ```
+  
+  
 ---
 **技巧**
 

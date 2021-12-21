@@ -36,5 +36,8 @@ racknerd:  https://www.racknerd.com/kvm-vps   # 便宜，开启加速之后速�
            
 野草云：http://www.yecaoyun.com/
 活动：http://www.vpszn.com/3675.html
+微基：https://idc.wiki/cart.php?gid=49#pid=215  #  CU4837 Lite KVM  200元/年  缺货需要抢
+	 https://idc.wiki/cart.php?gid=42    # 香港至尊纪念版36元/月
+狗云：https://www.dogyun.com/
 ```
 

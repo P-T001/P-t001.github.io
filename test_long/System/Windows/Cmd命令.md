@@ -65,3 +65,18 @@ wmic process # 查看进程路径
 chcp 65001         # 修改成utf-8
 ```
 
+获取当前时间戳
+
+```
+powershell -c Get-Date -Format yyyyMMddHHmmssfff
+```
+
+清除windows日志（需要超级管理员权限）
+
+```
+wevtutil cl security             # 清除安全日志
+wevtutil cl system               # 清除系统日志
+wevtutil cl application          # 清除应用程序日志
+wevtutil cl "windows powershell" # 清除powershell日志
+```
+

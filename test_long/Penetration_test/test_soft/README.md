@@ -62,5 +62,11 @@ http://www.d99net.net/News.asp?id=62
 https://github.com/w-digital-scanner/w9scan   # plugins里面有各种web模板的漏洞利用
 ```
 
+url存活扫描工具
+
+```
+https://github.com/ScriptKid-Beta/WebBatchRequest
+```
+
 
 

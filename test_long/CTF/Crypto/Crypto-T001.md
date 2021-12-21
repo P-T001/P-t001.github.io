@@ -2,7 +2,7 @@
 
 ---
 
-web-tool：
+**web-tool**
 
 | 编码名                    | url                                                   | code类型                    |
 | ------------------------- | ----------------------------------------------------- | --------------------------- |
@@ -16,4 +16,11 @@ web-tool：
 | jother                    | http://tmxk.org/jother/ <br>http://web2hack.org/xssee | !'()[]!+' && '$=~[]+"_.\(); |
 | Brainfuck/Ook!            | https://www.splitbrain.org/services/ook               |                             |
 | Ook!                      | https://www.splitbrain.org/services/ook               |                             |
+
+**编码解码工具**
+
+```
+https://github.com/0Chencc/CTFCrackTools
+对应burp插件：https://github.com/0Chencc/DaE
+```
 

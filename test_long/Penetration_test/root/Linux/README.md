@@ -10,6 +10,6 @@
 
 ```
 脏牛:https://github.com/Brucetg/DirtyCow-EXP
-烂土豆
+
 ```
 

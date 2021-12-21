@@ -2,8 +2,8 @@
 
 ---
 
-- - 官网：https://docs.xray.cool/
-- - 下载 ：https://github.com/chaitin/xray
+- 官网：https://docs.xray.cool/
+- 下载 ：https://github.com/chaitin/xray
 
 与burp联动被动扫描：
 ```

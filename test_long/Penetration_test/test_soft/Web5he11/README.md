@@ -11,8 +11,11 @@
 ### web5he11收集
 
 ```
+# php
 https://github.com/johnjce/herramientas/tree/master/
 https://github.com/weepsafe/phpshell
+# jsp免杀
+https://github.com/EmYiQing/JSPHorse  
 ```
 
 导致webshell不能执行命令的原因：（执行命令回显：red=127）

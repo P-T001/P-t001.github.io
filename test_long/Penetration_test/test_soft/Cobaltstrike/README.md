@@ -65,6 +65,8 @@ screen -S PID -X quit
 https://github.com/its-a-feature/Mythic     # windows、linux、macos等，不支持32位系统
 https://breakingsecurity.net/remcos/        # 纯windows，功能强大，付费
 https://www.worldwiredlabs.com/             # windows、linux、macos等 ，付费
+https://github.com/FunnyWolf/Viper          # 炫彩蛇，docker搭建，windows、linux均可
+https://github.com/quasar/Quasar            # 只能windows，需要自己修改免杀，但功能很全
 ```
 
 命令远程上线：

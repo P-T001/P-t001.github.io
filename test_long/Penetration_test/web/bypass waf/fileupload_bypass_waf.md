@@ -23,11 +23,18 @@ xxxxxxxxxx
 xxxxxxxx
 ```
 
-修改编码方式：（找到真实IP，通过真实IP请求，在请求包中加入以下即可）
+修改编码方式：
 
 ```
 Accept-Encoding: deflate   或者gzip   # 设置在请求头，对服务端声明可以接受的编码方式
 Content-Encoding: deflate  或者gzip   # 设置在响应头，对客户端声明会用哪种编码方式
+```
+
+修改header中的host：（包内的内容不影响发包还是会发到原本的目标，只是为了绕过waf的检测）
+
+```
+1.找到真实IP，通过真实IP请求
+2.如host中存在端口号，可以修改成其他端口或者删除
 ```
 
 

@@ -46,3 +46,9 @@ https://news.west.cn/65331.html
 通过计划任务执行cs马拿到服务器权限
 ```
 
+aapanel（国际版BT）-远程代码执行
+
+```
+https://github.com/jenaye/aapanel
+```
+

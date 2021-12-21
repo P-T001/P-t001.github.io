@@ -166,7 +166,19 @@ https://github.com/pureqh/bypasswaf
 例子：
 
 ```
---tamper=between       # 绕过>过滤
---tamper=unmagicquotes # 宽字节注入
+--tamper=xxx
+between                # 绕过>过滤
+unmagicquotes          # 宽字节注入
+e0UNION                # 将UNION替换成e0UNION
+apostrophemask         # 将'替换成UTF-8urlencoded的%EF%BC%87 
+apostrophenullencode   # 将'替换成%00%27
+appendnullbyte         # 在参数末尾加入%00
+base64encode           # base64编码所有字符
+between                # 将>字符替换为NOT BETWEEN 0 AND；将=字符替换为BETWEEN # AND # 
+charencode             # URL编码， 适用所有数据库
+chardoubleencode       # 二次URL编码
+charunicodeencode      # URL编码，必要条件:ASP,ASP.NET，适用所有数据库
+charunicodeescape      # url解码中的%篡改成\\
+commalesslimit         # 替换字符的位置
 ```
 

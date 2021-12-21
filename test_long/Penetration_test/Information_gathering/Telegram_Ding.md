@@ -12,6 +12,8 @@ https://t.me/FreeSGKbot?start=SGKZNVMBNC
 频道和群搜索：
 https://telegramgroups.com.hk/
 https://han.telegramindex.com/
+电影搜：
+http://www.sssoou.com/?channel=dianying4K
 
 电影线上看
 https://t.me/seemovie78
