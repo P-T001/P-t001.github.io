@@ -68,5 +68,11 @@ url存活扫描工具
 https://github.com/ScriptKid-Beta/WebBatchRequest
 ```
 
+全局代理工具
+
+```
+https://github.com/bobo2334/sockscap64/releases/tag/4.7
+```
+
 
 

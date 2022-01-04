@@ -42,6 +42,6 @@ http://www.gpsspg.com/maps.htm
 
 ## IP定位
 
-http://www.chaipip.com/ip.php #每天查20个ip
+http://www.chaipip.com/ #每天查20个ip
 
 

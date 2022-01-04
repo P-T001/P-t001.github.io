@@ -114,3 +114,10 @@ python Photon.py -u ""
 -d 每个请求间的延迟
 ```
 
+备案号查询
+
+```
+https://beian.miit.gov.cn/#/Integrated/recordQuery
+http://www.beian.gov.cn/portal/recordQuery?token=657977c2-d4d3-4b7c-a41c-99055f6c68b5
+```
+
