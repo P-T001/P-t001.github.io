@@ -74,5 +74,11 @@ https://github.com/ScriptKid-Beta/WebBatchRequest
 https://github.com/bobo2334/sockscap64/releases/tag/4.7
 ```
 
+浏览器记录数据导出
+
+```
+https://github.com/moonD4rk/HackBrowserData
+```
+
 
 

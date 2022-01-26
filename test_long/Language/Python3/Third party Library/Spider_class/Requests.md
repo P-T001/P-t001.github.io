@@ -18,6 +18,7 @@ head请求：requests.head(url,headers,proxies)      |url:目标地址、headers
 请求头部：headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36', 'content-type': 'charset=utf8'}
 -
 代    理：proxies = {"http": "http://127.0.0.1:10809","https": "https://127.0.0.1:10809"}
+					burp 不支持https,需要设置成http协议 "https": "http://127.0.0.1:10809"
 -
 postdata：data={'参数名':'值'}
 -
@@ -47,6 +48,9 @@ res_S=requests.Session()                                 # 创建会话对象
 res_S.headers.update(self.header)                        # 更新header
 res_S.proxies.update(self.proxies)                       # 更新proxies
 res_S.get(url) |res_S.post(url,data=)
+---
+x=requests.Session()  
+requests.utils.add_dict_to_cookiejar(x.cookies,{"PHPSESSID":"07et4ol1g7ttb0bnjmbiqjhp43"}) # 永久添加cookie
 ```
 
 获取返回内容：

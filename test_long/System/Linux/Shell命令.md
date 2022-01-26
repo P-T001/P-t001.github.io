@@ -17,6 +17,7 @@ cat /proc/cpuinfo # 看cpu 详细信息
 cat /proc/cpuinfo |grep name | cut -f2 -d: |uniq -c #只能cpu
 type *.txt > /root/1.txt     //合并当前目录下的所有 txt 文件内容到 1.txt
 cat 1.txt|sort|uniq > 2.txt    //去掉 1.txt 的重复内容并写入到 2.txt
+find -type f -name '*.php'|xargs grep 'xxx' # 查找php文件，内容含xxx
 ```
 
 - grep

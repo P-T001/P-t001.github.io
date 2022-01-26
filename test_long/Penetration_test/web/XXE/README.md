@@ -7,7 +7,7 @@
 - 介绍
 
   ```
-  XXE是XML外部实体（XML External Entity）注入的简称，在OWASP TOP 10 2017版中位居A4，属于严重级别的漏洞。此攻击可能导致任意文件读取，远程代码执行，拒绝服务，服务器端请求伪造，内网端口探测，以及其他系统影响。
+  XXE是XML外部实体（XML External Entity）注入的简称，在OWASP TOP 10 2017版中位居A4，属于严重级别的漏洞。此攻击可能导致任意文件读取，远程代码执行，内网端口探测，拒绝服务，服务器端请求伪造，以及其他系统影响。
   ```
 
 - XML和DTD基础
@@ -29,6 +29,8 @@ DTD部分（可选）
   DTD内部实体声明：<!ENTITY 实体名称 “实体的值">
   DTD外部实体声明：<!ENTITY 实体名称 SYSTEM “URI/URL">
 
+  SYSTEM表示参数实体引用外部实体内容 
+
   ```
   <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE root [
@@ -42,6 +44,7 @@ DTD部分（可选）
   1、没有过滤用户提交的XML数据
   2、使用的开发语言可以解析xml外部实体，如php环境中libxml库≤2.9.0默认启用了外部实体
   ```
+  
 - 漏洞常见位置
   
   ```
@@ -56,7 +59,19 @@ DTD部分（可选）
   ```
   libxml2 : file/http/ftp
   PHP     : file/http/ftp/php/compress.zlib/compress.bzip2/data/glob/phar
-  
+  java（weblogic、jboss、tomcat） :file/http/https/ftp/jar/netdoc/mailto/gopher
+  .NET    : file/http/https/ftp
   ```
 
-  
+
+- 修补
+
+  ```
+  1.禁止外部实体的方法
+  	php:
+  		libxml_disable_entity_loader(true);
+  	python:
+  		from lxml import etree xmlData = etree.parse(xmlSource,etree.XMLParser(resolve_entities=False))
+  2.过滤用户提交的xml数据
+  	如：<!DOCTYPE  <!ENTITY SYSTEM PUBLIC
+  ```
